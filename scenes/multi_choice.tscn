@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://scenes/components/option.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scripts/quiz.gd" type="Script" id=3]
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://asserts/img/360_F_323124237_SfGqpttZqU2mrMm61VPSWA2tKvc95l9O.jpg" type="Texture" id=2]
+[ext_resource path="res://scripts/multi_choice.gd" type="Script" id=3]
 [ext_resource path="res://main_theme.tres" type="Theme" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
@@ -18,91 +19,61 @@ anchor_bottom = 1.0
 theme = ExtResource( 4 )
 script = ExtResource( 3 )
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRct" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 1.0
-margin_top = 1.0
-margin_right = 1.0
-margin_bottom = 1.0
+margin_left = 15.0
+margin_top = 6.0
+margin_right = 15.0
+margin_bottom = 6.0
+texture = ExtResource( 2 )
 expand = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchor_left = 0.09375
-anchor_top = 0.18
-anchor_right = 0.907227
-anchor_bottom = 0.921667
-theme = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -448.0
+margin_top = -235.0
+margin_right = 398.0
+margin_bottom = 238.0
 
-[node name="qn" type="Label" parent="VBoxContainer"]
-margin_right = 833.0
+[node name="qn" type="Label" parent="Panel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -420.0
+margin_right = 421.0
 margin_bottom = 53.0
+size_flags_vertical = 1
 custom_styles/normal = SubResource( 1 )
 text = "Question 1
 "
 align = 1
 
-[node name="options" type="VBoxContainer" parent="VBoxContainer"]
-margin_top = 57.0
-margin_right = 833.0
-margin_bottom = 411.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+[node name="ItemList" type="ItemList" parent="Panel"]
+margin_left = 58.0
+margin_top = 65.0
+margin_right = 796.0
+margin_bottom = 404.0
+theme = ExtResource( 4 )
+items = [ "Item 0", ExtResource( 1 ), false, "Item 1", ExtResource( 1 ), false, "Item 2", ExtResource( 1 ), false, "Item 3", ExtResource( 1 ), false ]
+allow_reselect = true
+same_column_width = true
 
-[node name="option" parent="VBoxContainer/options" instance=ExtResource( 1 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 833.0
-margin_bottom = 85.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="option2" parent="VBoxContainer/options" instance=ExtResource( 1 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 89.0
-margin_right = 833.0
-margin_bottom = 175.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="option3" parent="VBoxContainer/options" instance=ExtResource( 1 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 179.0
-margin_right = 833.0
-margin_bottom = 264.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="option4" parent="VBoxContainer/options" instance=ExtResource( 1 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 268.0
-margin_right = 833.0
-margin_bottom = 354.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="next" type="Button" parent="VBoxContainer"]
-margin_top = 415.0
-margin_right = 833.0
-margin_bottom = 445.0
+[node name="nextBtn" type="Button" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.968
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -228.0
+margin_top = -37.864
+margin_right = 220.0
+margin_bottom = -10.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+disabled = true
 text = "Next"
 
-[connection signal="pressed" from="VBoxContainer/next" to="." method="_on_Button_pressed"]
+[connection signal="item_selected" from="Panel/ItemList" to="." method="_on_ItemList_item_selected"]
+[connection signal="pressed" from="Panel/nextBtn" to="." method="_on_nextBtn_pressed"]

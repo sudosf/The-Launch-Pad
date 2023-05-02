@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/components/option.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scripts/quiz.gd" type="Script" id=3]
+[ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://main_theme.tres" type="Theme" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
@@ -11,7 +11,6 @@ bg_color = Color( 0.0627451, 0, 0.25098, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 4 )
-script = ExtResource( 3 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
@@ -50,6 +49,8 @@ size_flags_vertical = 3
 [node name="option" parent="VBoxContainer/options" instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 0.0
 margin_right = 833.0
 margin_bottom = 86.0
 size_flags_horizontal = 3
@@ -61,6 +62,7 @@ __meta__ = {
 [node name="option2" parent="VBoxContainer/options" instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
+margin_left = 0.0
 margin_top = 90.0
 margin_right = 833.0
 margin_bottom = 176.0
@@ -73,6 +75,7 @@ __meta__ = {
 [node name="option3" parent="VBoxContainer/options" instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
+margin_left = 0.0
 margin_top = 180.0
 margin_right = 833.0
 margin_bottom = 266.0
@@ -85,6 +88,7 @@ __meta__ = {
 [node name="option4" parent="VBoxContainer/options" instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
+margin_left = 0.0
 margin_top = 270.0
 margin_right = 833.0
 margin_bottom = 356.0
@@ -99,5 +103,11 @@ margin_top = 415.0
 margin_right = 833.0
 margin_bottom = 445.0
 text = "Next"
+
+[node name="ItemList" type="ItemList" parent="."]
+margin_right = 844.0
+margin_bottom = 567.0
+theme = ExtResource( 4 )
+items = [ "Item 0", ExtResource( 2 ), false, "Item 1", ExtResource( 2 ), false, "Item 2", ExtResource( 2 ), false, "Item 3", ExtResource( 2 ), false ]
 
 [connection signal="pressed" from="VBoxContainer/next" to="." method="_on_Button_pressed"]

@@ -55,7 +55,7 @@ func get_status():
 
 func print_status():
 	if (response['status'] == 1): 
-		print("DB Status: Connected!", "\nMessage: " + response['message'])
+		print("DB Status: Connected to database!", "\nMessage: " + response['message'])
 	else: print("DB Status: Connection Failed.", "\nError: " + response['message'])
 	request_complete = false # reset request check
 

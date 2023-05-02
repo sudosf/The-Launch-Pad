@@ -5,27 +5,32 @@
 [node name="option" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -735.0
-margin_bottom = -547.0
+margin_left = 30.0
+margin_top = 14.0
+margin_right = -852.0
+margin_bottom = -549.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
+
+[node name="CheckBox" type="CheckBox" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -12.0
+margin_top = -16.0
+margin_right = 12.0
+margin_bottom = 16.0
 
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -65.5
+margin_left = -65.0
 margin_top = -15.5
-margin_right = 65.5
+margin_right = 152.0
 margin_bottom = 15.5
 theme = ExtResource( 1 )
 text = "Option"
 align = 1
-
-[node name="CheckBox" type="CheckBox" parent="Label"]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_top = -16.0
-margin_right = 24.0
-margin_bottom = 16.0
