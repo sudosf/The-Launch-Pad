@@ -3,18 +3,18 @@ extends Control
 onready var nextBtn = $Panel/nextBtn
 onready var itemList = $Panel/ItemList
 
-# multiple choice
-var multi_choice_qn: Array # question(s) from DB
+# True/False
+var TF_qn: Array # question(s) from DB
 
 var opt_select # selected option by user
 
 func _ready():
-	Network.get_questions("multi-choice")
+	Network.get_questions("T-F")
 
 func _process(delta):
 	if Network.request_complete: # check if status reqeust is completed
-		multi_choice_qn = Network.response
-		# print(multi_choice_qn[0])
+		TF_qn = Network.response
+		print(TF_qn[0])
 		Network.request_complete = false
 	else: return
 

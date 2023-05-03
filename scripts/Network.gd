@@ -6,23 +6,36 @@ extends Control
 """
 
 var request_complete: bool = false
+# var response_collected: bool = false
+# var is_requesting: bool = false
+
 var response # response data from API endpoints
 
 # questions from DB
-var multi_choice
 var multi_response
-var T_F # True/False
 var short_ans # Short answer
 var fill_blank # fill-in-the-blank
 
 var http_request : HTTPRequest = HTTPRequest.new()
 const SERVER_URL = "http://localhost:5000"
 
+# var request_queue: Array = [] # hold all requests
+
 func _ready():
 	randomize()
 	add_child(http_request) # Connect our request handler:
 	# warning-ignore: return_value_discarded
 	http_request.connect("request_completed", self, "_http_request_completed")
+
+#func _process(delta):
+#	if is_requesting:
+#		return
+#	if request_queue.empty() and response_collected:
+#		response_collected = false
+#		return
+#
+#	is_requesting = true
+#	send_request(request_queue.pop_front())
 
 func send_request(url): # simple get request
 	var client = HTTPClient.new()
@@ -41,17 +54,22 @@ func _http_request_completed(_result, _response_code, _headers, _body):
 	# print(_response_code)
 	# print(response, "\n")
 	request_complete = true
+	# is_requesting  = false
 
 """
 	# Available endpoints to use 
 """
-func getAll(): # get all questions data
-	var url_endpoint = SERVER_URL + "/questions"
-	send_request(url_endpoint)
+func get_questions(type):
+	var endpoint = SERVER_URL + "/questions/types/" + type
+	send_request(endpoint)
+
+func get_all_questions(): # get all questions data
+	var endpoint = SERVER_URL + "/questions"
+	send_request(endpoint)
 
 func get_status():
-	var url_endpoint = SERVER_URL + "/"
-	send_request(url_endpoint) # request for DB status
+	var endpoint = SERVER_URL + "/"
+	send_request(endpoint)
 
 func print_status():
 	if (response['status'] == 1): 
