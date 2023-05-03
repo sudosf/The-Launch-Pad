@@ -19,4 +19,8 @@ func _process(delta):
 	else: return
 
 func _on_nextBtn_pressed():
-	print(opt_select)
+	Global.add_next_scene()
+
+
+func _on_LineEdit_text_changed(new_text):
+	nextBtn.disabled = false

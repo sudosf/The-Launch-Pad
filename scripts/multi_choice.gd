@@ -14,7 +14,7 @@ func _ready():
 func _process(delta):
 	if Network.request_complete: # check if status reqeust is completed
 		multi_choice_qn = Network.response
-		# print(multi_choice_qn[0])
+		print(multi_choice_qn)
 		Network.request_complete = false
 	else: return
 
@@ -23,4 +23,4 @@ func _on_ItemList_item_selected(index: int) -> void:
 	nextBtn.disabled = false
 
 func _on_nextBtn_pressed():
-	print(opt_select)
+	Global.add_next_scene()

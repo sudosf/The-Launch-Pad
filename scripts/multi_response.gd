@@ -31,4 +31,4 @@ func _on_ItemList_item_selected(index: int) -> void:
 	nextBtn.disabled = false
 
 func _on_nextBtn_pressed():
-	print(selected)
+	Global.add_next_scene()

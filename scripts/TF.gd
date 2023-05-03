@@ -23,4 +23,4 @@ func _on_ItemList_item_selected(index: int) -> void:
 	nextBtn.disabled = false
 
 func _on_nextBtn_pressed():
-	print(opt_select)
+	Global.add_next_scene()

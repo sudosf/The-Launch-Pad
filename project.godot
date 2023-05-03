@@ -11,12 +11,13 @@ config_version=4
 [application]
 
 config/name="Quiz_Game"
-run/main_scene="res://scenes/multi_choice.tscn"
+run/main_scene="res://scenes/main.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 Network="*res://scripts/Network.gd"
+Global="*res://scripts/Global.gd"
 
 [display]
 
