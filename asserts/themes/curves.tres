@@ -1,0 +1,16 @@
+[gd_resource type="Theme" load_steps=5 format=2]
+
+[ext_resource path="res://asserts/fonts/MochiyPopOne-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://asserts/themes/button/btn_hover_dark.tres" type="StyleBox" id=2]
+[ext_resource path="res://asserts/themes/button/btn_normal_dark.tres" type="StyleBox" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+
+[resource]
+Button/fonts/font = SubResource( 1 )
+Button/styles/hover = ExtResource( 2 )
+Button/styles/normal = ExtResource( 3 )
+Button/styles/pressed = ExtResource( 3 )

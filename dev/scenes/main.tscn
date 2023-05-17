@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://scripts/main.gd" type="Script" id=1]
+[ext_resource path="res://asserts/themes/main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://asserts/img/360_F_323124237_SfGqpttZqU2mrMm61VPSWA2tKvc95l9O.jpg" type="Texture" id=2]
-[ext_resource path="res://main_theme.tres" type="Theme" id=4]
+[ext_resource path="res://dev/scripts/main.gd" type="Script" id=3]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.882353, 0.329412, 0.329412, 1 )
@@ -10,16 +10,12 @@ bg_color = Color( 0.882353, 0.329412, 0.329412, 1 )
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 4 )
-script = ExtResource( 1 )
+theme = ExtResource( 1 )
+script = ExtResource( 3 )
 
 [node name="TextureRct" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 15.0
-margin_top = 6.0
-margin_right = 15.0
-margin_bottom = 6.0
 texture = ExtResource( 2 )
 expand = true
 
@@ -39,22 +35,26 @@ valign = 1
 
 [node name="Play" type="Button" parent="."]
 anchor_left = 0.5
-anchor_top = 0.968
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -122.0
-margin_top = -301.8
-margin_right = 133.0
-margin_bottom = -240.0
+anchor_bottom = 0.5
+margin_left = -98.0
+margin_top = 125.0
+margin_right = 132.0
+margin_bottom = 215.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "Play"
 
 [node name="Exit" type="Button" parent="."]
-margin_left = 414.0
-margin_top = 376.0
-margin_right = 625.0
-margin_bottom = 431.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -105.5
+margin_top = -27.5
+margin_right = 105.5
+margin_bottom = 27.5
 text = "Exit"
 
 [connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]

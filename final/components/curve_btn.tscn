@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://asserts/themes/curves.tres" type="Theme" id=1]
+
+[node name="Button" type="Button"]
+margin_left = 19.0
+margin_top = 23.0
+margin_right = 161.0
+margin_bottom = 69.0
+theme = ExtResource( 1 )
+text = "btn"

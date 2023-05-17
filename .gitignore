@@ -1,7 +1,7 @@
 
 # excluded from repo
 
-export
+export/
 *.import
 .import/
 .mono/

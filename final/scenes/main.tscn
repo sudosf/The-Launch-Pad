@@ -1,0 +1,342 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://asserts/themes/main_theme.tres" type="Theme" id=1]
+[ext_resource path="res://asserts/themes/title_label.tres" type="Theme" id=2]
+[ext_resource path="res://asserts/img/red-blood-drop-guttae-blood-dab970d241ab2886feb2860dc6bfbaf9.png" type="Texture" id=3]
+[ext_resource path="res://final/components/back_btn.tscn" type="PackedScene" id=4]
+[ext_resource path="res://final/components/curve_btn.tscn" type="PackedScene" id=5]
+[ext_resource path="res://asserts/themes/button/btn_normal_red.tres" type="StyleBox" id=6]
+[ext_resource path="res://asserts/themes/button/btn_hover_red.tres" type="StyleBox" id=7]
+[ext_resource path="res://final/components/PanelContainer.tscn" type="PackedScene" id=8]
+
+[sub_resource type="Gradient" id=5]
+interpolation_mode = 1
+offsets = PoolRealArray( 0.324022, 0.994413, 1 )
+colors = PoolColorArray( 0.0820312, 0.0820312, 0.0820312, 1, 0.587417, 0.586076, 0.586076, 1, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 5 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.752941, 0.27451, 0.27451, 1 )
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.176471, 0.65098, 0.858824, 1 )
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 38.0
+texture = SubResource( 2 )
+expand = true
+flip_v = true
+
+[node name="Button" parent="background" instance=ExtResource( 4 )]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -396.0
+margin_top = 18.0
+margin_right = -280.0
+margin_bottom = 74.0
+
+[node name="title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -356.0
+margin_top = 126.0
+margin_right = 67.0
+margin_bottom = 180.0
+theme = ExtResource( 2 )
+text = "How to Play"
+valign = 1
+autowrap = true
+
+[node name="overview" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -359.0
+margin_top = 192.0
+margin_right = -194.0
+margin_bottom = 240.0
+theme = ExtResource( 1 )
+custom_styles/normal = SubResource( 7 )
+text = "Overview"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -391.0
+margin_top = -102.0
+margin_right = 397.0
+margin_bottom = -15.0
+custom_styles/panel = SubResource( 6 )
+
+[node name="email" parent="Panel" instance=ExtResource( 5 )]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -214.0
+margin_top = -28.5
+margin_right = -45.0
+margin_bottom = 27.5
+custom_styles/hover = ExtResource( 7 )
+custom_styles/normal = ExtResource( 6 )
+text = "Next"
+
+[node name="PanelDescription" parent="." instance=ExtResource( 8 )]
+margin_left = -362.0
+margin_top = -170.0
+margin_right = 350.0
+margin_bottom = 1.0
+
+[node name="description" type="Label" parent="PanelDescription"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 32.0
+margin_top = -29.5
+margin_right = 492.0
+margin_bottom = 48.5
+theme = ExtResource( 1 )
+text = "Short Description of  Game Play"
+valign = 1
+autowrap = true
+
+[node name="logoIcon" type="TextureRect" parent="PanelDescription"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -124.0
+margin_top = -58.5
+margin_right = -42.0
+margin_bottom = 27.5
+texture = ExtResource( 3 )
+expand = true
+
+[node name="Panel1" parent="." instance=ExtResource( 8 )]
+margin_left = -369.0
+margin_top = 40.0
+margin_right = -57.0
+margin_bottom = 212.0
+
+[node name="description2" type="Label" parent="Panel1"]
+margin_left = 27.0
+margin_top = 9.0
+margin_right = 140.0
+margin_bottom = 40.0
+theme = ExtResource( 1 )
+text = "Round 1"
+valign = 1
+autowrap = true
+
+[node name="questions" type="Label" parent="Panel1"]
+margin_left = 17.0
+margin_top = 99.0
+margin_right = 281.0
+margin_bottom = 131.0
+theme = ExtResource( 1 )
+text = "10 Questions"
+valign = 1
+autowrap = true
+
+[node name="logoIcon2" type="TextureRect" parent="Panel1"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 27.0
+margin_top = -41.0
+margin_right = 88.0
+margin_bottom = 13.0
+texture = ExtResource( 3 )
+expand = true
+
+[node name="ProgressBar" type="ProgressBar" parent="Panel1"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = -38.0
+margin_right = 237.0
+margin_bottom = -20.0
+theme = ExtResource( 1 )
+value = 50.0
+
+[node name="number" type="Label" parent="Panel1"]
+margin_left = 252.0
+margin_top = 128.0
+margin_right = 300.0
+margin_bottom = 155.0
+theme = ExtResource( 1 )
+custom_styles/normal = SubResource( 8 )
+text = "5/10"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="mode" type="Label" parent="Panel1"]
+margin_left = 229.0
+margin_top = 9.0
+margin_right = 292.0
+margin_bottom = 39.0
+theme = ExtResource( 1 )
+custom_colors/font_color = Color( 0.501961, 1, 0, 1 )
+text = "Easy"
+valign = 1
+autowrap = true
+
+[node name="Panel2" parent="." instance=ExtResource( 8 )]
+margin_left = -3.0
+margin_top = 39.0
+margin_right = 309.0
+margin_bottom = 211.0
+
+[node name="description2" type="Label" parent="Panel2"]
+margin_left = 27.0
+margin_top = 9.0
+margin_right = 140.0
+margin_bottom = 40.0
+theme = ExtResource( 1 )
+text = "Round 2"
+valign = 1
+autowrap = true
+
+[node name="questions" type="Label" parent="Panel2"]
+margin_left = 17.0
+margin_top = 99.0
+margin_right = 281.0
+margin_bottom = 131.0
+theme = ExtResource( 1 )
+text = "17 Questions"
+valign = 1
+autowrap = true
+
+[node name="logoIcon2" type="TextureRect" parent="Panel2"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 27.0
+margin_top = -41.0
+margin_right = 88.0
+margin_bottom = 13.0
+texture = ExtResource( 3 )
+expand = true
+
+[node name="ProgressBar" type="ProgressBar" parent="Panel2"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = -38.0
+margin_right = 237.0
+margin_bottom = -20.0
+theme = ExtResource( 1 )
+value = 30.0
+
+[node name="number" type="Label" parent="Panel2"]
+margin_left = 252.0
+margin_top = 128.0
+margin_right = 300.0
+margin_bottom = 155.0
+theme = ExtResource( 1 )
+custom_styles/normal = SubResource( 8 )
+text = "3/10"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="mode" type="Label" parent="Panel2"]
+margin_left = 229.0
+margin_top = 9.0
+margin_right = 292.0
+margin_bottom = 39.0
+theme = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 0.631373, 0, 1 )
+text = "Medium"
+valign = 1
+autowrap = true
+
+[node name="Panel3" parent="." instance=ExtResource( 8 )]
+margin_left = -363.0
+margin_top = 232.0
+margin_right = -51.0
+margin_bottom = 404.0
+
+[node name="description2" type="Label" parent="Panel3"]
+margin_left = 27.0
+margin_top = 9.0
+margin_right = 140.0
+margin_bottom = 40.0
+theme = ExtResource( 1 )
+text = "Round 3"
+valign = 1
+autowrap = true
+
+[node name="questions" type="Label" parent="Panel3"]
+margin_left = 17.0
+margin_top = 99.0
+margin_right = 281.0
+margin_bottom = 131.0
+theme = ExtResource( 1 )
+text = "8 Questions"
+valign = 1
+autowrap = true
+
+[node name="logoIcon2" type="TextureRect" parent="Panel3"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 27.0
+margin_top = -41.0
+margin_right = 88.0
+margin_bottom = 13.0
+texture = ExtResource( 3 )
+expand = true
+
+[node name="ProgressBar" type="ProgressBar" parent="Panel3"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = -38.0
+margin_right = 237.0
+margin_bottom = -20.0
+theme = ExtResource( 1 )
+value = 10.0
+
+[node name="number" type="Label" parent="Panel3"]
+margin_left = 252.0
+margin_top = 128.0
+margin_right = 300.0
+margin_bottom = 155.0
+theme = ExtResource( 1 )
+custom_styles/normal = SubResource( 8 )
+text = "1/10"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="mode" type="Label" parent="Panel3"]
+margin_left = 229.0
+margin_top = 9.0
+margin_right = 292.0
+margin_bottom = 39.0
+theme = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 0.270588, 0.270588, 1 )
+text = "Hard"
+valign = 1
+autowrap = true

@@ -2,9 +2,12 @@
 
 [ext_resource path="res://asserts/fonts/MochiyPopOne-Regular.ttf" type="DynamicFontData" id=1]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=3]
+size = 37
+outline_color = Color( 0.709804, 0, 0, 1 )
+use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 1 )
 
 [resource]
-default_font = SubResource( 1 )
+default_font = SubResource( 3 )

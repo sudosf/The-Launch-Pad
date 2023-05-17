@@ -9,10 +9,10 @@ var multi_choice_qn
 var response_collected: bool = false
 
 # scenes preload
-var multi_choice_scene = preload("res://scenes/multi_choice.tscn")
-var multi_response_scene = preload("res://scenes/multi_response.tscn")
-var TF_scene = preload("res://scenes/T-F.tscn")
-var short_ans_scene = preload("res://scenes/short_ans.tscn")
+var multi_choice_scene = preload("res://dev/scenes/multi_choice.tscn")
+var multi_response_scene = preload("res://dev/scenes/multi_response.tscn")
+var TF_scene = preload("res://dev/scenes/T-F.tscn")
+var short_ans_scene = preload("res://dev/scenes/short_ans.tscn")
 
 var scene_instances: Array
 
