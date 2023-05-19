@@ -1,0 +1,229 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://asserts/themes/main_theme.tres" type="Theme" id=1]
+[ext_resource path="res://asserts/themes/button/btn_normal_red.tres" type="StyleBox" id=2]
+[ext_resource path="res://final/components/PanelContainer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://asserts/themes/title_label.tres" type="Theme" id=4]
+[ext_resource path="res://asserts/img/red-blood-drop-guttae-blood-dab970d241ab2886feb2860dc6bfbaf9.png" type="Texture" id=5]
+[ext_resource path="res://asserts/themes/button/btn_hover_red.tres" type="StyleBox" id=6]
+[ext_resource path="res://final/components/option_btn.tscn" type="PackedScene" id=7]
+[ext_resource path="res://final/components/back_btn.tscn" type="PackedScene" id=8]
+[ext_resource path="res://final/components/curve_btn.tscn" type="PackedScene" id=9]
+[ext_resource path="res://asserts/characters/Mom_Umbrella_NOBG.png" type="Texture" id=10]
+[ext_resource path="res://final/scripts/multi_choice.gd" type="Script" id=11]
+
+[sub_resource type="Gradient" id=5]
+interpolation_mode = 1
+offsets = PoolRealArray( 0.324022, 0.994413, 1 )
+colors = PoolColorArray( 0.0820312, 0.0820312, 0.0820312, 1, 0.587417, 0.586076, 0.586076, 1, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 5 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.6, 0.6, 0.6, 0.0823529 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.176471, 0.65098, 0.858824, 1 )
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 11 )
+
+[node name="background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 38.0
+texture = SubResource( 2 )
+expand = true
+flip_v = true
+
+[node name="characterImg" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 165.0
+margin_top = -194.0
+margin_right = 464.0
+margin_bottom = 267.0
+texture = ExtResource( 10 )
+expand = true
+stretch_mode = 5
+
+[node name="backBtn" parent="." instance=ExtResource( 8 )]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -377.0
+margin_top = 18.0
+margin_right = -261.0
+margin_bottom = 74.0
+
+[node name="titleLbl" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -211.0
+margin_top = 68.0
+margin_right = 212.0
+margin_bottom = 122.0
+theme = ExtResource( 4 )
+text = "Round 1"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="PanelProgress" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -396.0
+margin_top = -163.0
+margin_right = 392.0
+margin_bottom = -67.0
+custom_styles/panel = SubResource( 6 )
+
+[node name="continueBtn" parent="PanelProgress" instance=ExtResource( 9 )]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = -33.0
+margin_right = -40.0
+margin_bottom = 31.0
+custom_styles/hover = ExtResource( 6 )
+custom_styles/normal = ExtResource( 2 )
+text = "Continue"
+
+[node name="Control" type="Control" parent="PanelProgress"]
+margin_left = 20.0
+margin_top = 6.0
+margin_right = 364.0
+margin_bottom = 87.0
+
+[node name="progressLbl" type="Label" parent="PanelProgress/Control"]
+margin_left = 25.0
+margin_top = 3.0
+margin_right = 327.0
+margin_bottom = 48.0
+theme = ExtResource( 1 )
+text = "Quiz Progress"
+valign = 1
+autowrap = true
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelProgress/Control"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -22.0
+margin_right = 244.0
+theme = ExtResource( 1 )
+value = 50.0
+
+[node name="numberLbl" type="Label" parent="PanelProgress/Control"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -48.0
+margin_top = -27.0
+theme = ExtResource( 1 )
+custom_styles/normal = SubResource( 7 )
+text = "5/10"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="PanelQuestion" parent="." instance=ExtResource( 3 )]
+margin_left = -423.0
+margin_top = -288.0
+margin_right = 368.0
+margin_bottom = -196.0
+
+[node name="questionLbl" type="Label" parent="PanelQuestion"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 45.0
+margin_top = -25.0
+margin_right = 505.0
+margin_bottom = 27.0
+theme = ExtResource( 1 )
+text = "Question 1"
+valign = 1
+autowrap = true
+
+[node name="logoIcon" type="TextureRect" parent="PanelQuestion"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -120.0
+margin_top = -30.0
+margin_right = -48.0
+margin_bottom = 36.0
+texture = ExtResource( 5 )
+expand = true
+
+[node name="options" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -390.0
+margin_top = -157.0
+margin_right = 160.0
+margin_bottom = 238.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 20
+
+[node name="option1" parent="options" instance=ExtResource( 7 )]
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 550.0
+margin_bottom = 83.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "ans 1"
+
+[node name="option2" parent="options" instance=ExtResource( 7 )]
+margin_left = 0.0
+margin_top = 103.0
+margin_right = 550.0
+margin_bottom = 187.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "ans 2"
+
+[node name="option3" parent="options" instance=ExtResource( 7 )]
+margin_left = 0.0
+margin_top = 207.0
+margin_right = 550.0
+margin_bottom = 291.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "ans 3"
+
+[node name="option4" parent="options" instance=ExtResource( 7 )]
+margin_left = 0.0
+margin_top = 311.0
+margin_right = 550.0
+margin_bottom = 395.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "ans 4"
+
+[connection signal="pressed" from="PanelProgress/continueBtn" to="." method="_on_continueBtn_pressed"]
+[connection signal="pressed" from="options/option1" to="." method="_on_option1_pressed"]
+[connection signal="pressed" from="options/option2" to="." method="_on_option2_pressed"]
+[connection signal="pressed" from="options/option3" to="." method="_on_option3_pressed"]
+[connection signal="pressed" from="options/option4" to="." method="_on_option4_pressed"]

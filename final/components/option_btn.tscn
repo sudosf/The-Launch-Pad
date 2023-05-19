@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://asserts/themes/curves.tres" type="Theme" id=1]
+[ext_resource path="res://asserts/img/pngwing.com.png" type="Texture" id=2]
+[ext_resource path="res://asserts/themes/button/btn_hover_red.tres" type="StyleBox" id=3]
+[ext_resource path="res://asserts/themes/button/btn_hover_red_secondary.tres" type="StyleBox" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.184314, 0.184314, 0.184314, 1 )
+border_width_left = 2
+border_width_top = 2
+border_color = Color( 0.207843, 0.552941, 0.694118, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Button" type="Button"]
+margin_left = 19.0
+margin_top = 23.0
+margin_right = 481.0
+margin_bottom = 89.0
+theme = ExtResource( 1 )
+custom_styles/hover = ExtResource( 4 )
+custom_styles/focus = ExtResource( 3 )
+custom_styles/normal = SubResource( 1 )
+text = "btn"
+icon = ExtResource( 2 )
+icon_align = 2
+expand_icon = true
