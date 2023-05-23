@@ -5,16 +5,15 @@ onready var multi_choice = preload("res://final/scenes/multi_choice.tscn")
 onready var option_scene = preload("res://final/components/icon_option_btn.tscn")
 
 
+
 func _ready():
 	Network.get_all_questions()
-	pass
 
 func _process(delta):
 	if Global.response_collected:
-		# store all questions
-		Global.documents = Network.response
-		instance_quiz()
+		Global.documents = Network.response # store all questions
 		Global.response_collected = false
+		instance_quiz() # set up quiz scenes
 	
 	if Network.request_complete: # check if status reqeust is completed
 		Global.response_collected = true
@@ -23,6 +22,7 @@ func _process(delta):
 
 func instance_quiz():
 	for doc in Global.documents:
+		# set up multi-choice quiz questions
 		if doc['type'] == "multi-choice":
 			var mc_instance = multi_choice.instance()
 			
@@ -44,7 +44,7 @@ func instance_mc_options(mc_scene, options):
 	for opt in options:
 		var opt_instance = option_scene.instance()
 		opt_instance.text = opt
-		opt_instance.connect("pressed", self, "_on_optionBtn_pressed", [opt])
+		# opt_instance.connect("pressed", self, "_on_optionBtn_pressed", [opt])
 		mc_scene.get_node("options").add_child(opt_instance)
 
 func _on_playBtn_pressed():
