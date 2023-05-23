@@ -26,12 +26,13 @@ func instance_quiz():
 		if doc['type'] == "multi-choice":
 			var mc_instance = multi_choice.instance()
 			
+			# add multi-choice options to scene
 			instance_mc_options(mc_instance, doc["options"])
 			
 			mc_instance.get_node("answer").text = doc["answer"]
 			mc_instance.get_node("PanelQuestion/questionLbl").text = doc["question"]
 			
-			Global.quiz_scenes.push_back(mc_instance)
+			Global.quiz_scenes.push_back(mc_instance) # add scene to quiz-scene list
 
 		elif doc['type'] == "left-right":
 			pass
@@ -44,7 +45,6 @@ func instance_mc_options(mc_scene, options):
 	for opt in options:
 		var opt_instance = option_scene.instance()
 		opt_instance.text = opt
-		# opt_instance.connect("pressed", self, "_on_optionBtn_pressed", [opt])
 		mc_scene.get_node("options").add_child(opt_instance)
 
 func _on_playBtn_pressed():
