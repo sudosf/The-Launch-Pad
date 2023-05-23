@@ -14,7 +14,8 @@ var options_data = [
 
 func _ready():
 	correct_ans = $answer.text
-	populate_options(options_data)
+	print(correct_ans)
+	# populate_options(options_data)
 
 func populate_options(data):
 

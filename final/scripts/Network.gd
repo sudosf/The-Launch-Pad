@@ -11,11 +11,6 @@ var request_complete: bool = false
 
 var response # response data from API endpoints
 
-# questions from DB
-var multi_response
-var short_ans # Short answer
-var fill_blank # fill-in-the-blank
-
 var http_request : HTTPRequest = HTTPRequest.new()
 const SERVER_URL = "http://localhost:5000"
 
@@ -51,7 +46,7 @@ func _http_request_completed(_result, _response_code, _headers, _body):
 		return
 	
 	response = parse_json(_body.get_string_from_utf8())
-	# print(_response_code)
+	print(_response_code)
 	# print(response, "\n")
 	request_complete = true
 	# is_requesting  = false

@@ -5,27 +5,20 @@ extends Node
 """
 
 # questions from DB
-var multi_choice_qn
 var response_collected: bool = false
+var documents # all documents in Collection('questions)
 
-# scenes preload
-var multi_choice_scene = preload("res://dev/scenes/multi_choice.tscn")
-# var multi_response_scene = preload("res://dev/scenes/multi_response.tscn")
-# var TF_scene = preload("res://dev/scenes/T-F.tscn")
-# var short_ans_scene = preload("res://dev/scenes/short_ans.tscn")
-
-var scene_instances: Array
+var quiz_scenes: Array
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Network.get_all_questions()
+	# Network.get_all_questions()
+	pass
 
 func _process(delta):
+	"""
 	if response_collected:
-		instance_scene(multi_choice_scene, "multi-choice")
-		# instance_scene(multi_response_scene, "multi-response")
-		# instance_scene(TF_scene, "T-F")
-		# instance_scene(short_ans_scene, "short-answer")
+		# instance_scene(multi_choice_scene, "multi-choice")
 		# response_collected = false
 		
 	if Network.request_complete: # check if status reqeust is completed
@@ -34,25 +27,16 @@ func _process(delta):
 		response_collected = true
 		Network.request_complete = false
 	else: return
+	"""
+	pass
 
 func add_next_scene():
-	if(not scene_instances.empty()):
-		get_tree().get_root().add_child(scene_instances.pop_front())
+	if not quiz_scenes.empty():
+		get_tree().get_root().add_child(quiz_scenes.pop_front())
 
 func instance_scene(scene, type):
 	if type ==  "multi-choice":
 		var scene_instance = scene.instance()
-		
-		scene_instance.get_node("Panel/qn").text = multi_choice_qn["question"]
-		var item_list = scene_instance.get_node("Panel/ItemList")
-		
-		var i = 0
-		for opt in multi_choice_qn['options']:
-			item_list.set_item_text(i, opt)
-			i += 1
-		
-		scene_instances.push_back(scene_instance)
+		quiz_scenes.push_back(scene_instance)
 	else:
 		pass
-		# var scene_instance = scene.instance()
-		# scene_instances.push_back(scene_instance)
