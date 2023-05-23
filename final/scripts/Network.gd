@@ -12,7 +12,7 @@ var request_complete: bool = false
 var response # response data from API endpoints
 
 var http_request : HTTPRequest = HTTPRequest.new()
-const SERVER_URL = "http://localhost:5000"
+const SERVER_URL = "https://tlp-api.onrender.com"
 
 # var request_queue: Array = [] # hold all requests
 
@@ -46,7 +46,7 @@ func _http_request_completed(_result, _response_code, _headers, _body):
 		return
 	
 	response = parse_json(_body.get_string_from_utf8())
-	print(_response_code)
+	print("Network status code: ", _response_code)
 	# print(response, "\n")
 	request_complete = true
 	# is_requesting  = false

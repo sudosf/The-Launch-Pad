@@ -194,3 +194,4 @@ margin_bottom = -144.0
 [connection signal="pressed" from="PanelProgress/continueBtn" to="." method="_on_continueBtn_pressed"]
 
 [editable path="PanelQuestion/TextBubble"]
+[editable path="LeftRight"]

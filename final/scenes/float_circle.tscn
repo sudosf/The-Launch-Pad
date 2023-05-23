@@ -10,7 +10,7 @@
 [ext_resource path="res://final/components/back_btn.tscn" type="PackedScene" id=8]
 [ext_resource path="res://final/components/curve_btn.tscn" type="PackedScene" id=9]
 [ext_resource path="res://final/components/TextBubble.tscn" type="PackedScene" id=12]
-[ext_resource path="res://final/components/follow_path.tscn" type="PackedScene" id=13]
+[ext_resource path="res://final/components/circle.tscn" type="PackedScene" id=13]
 
 [sub_resource type="Gradient" id=5]
 interpolation_mode = 1

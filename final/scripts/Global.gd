@@ -4,6 +4,12 @@ extends Node
 	# global script for accessing variables from any scene and...
 """
 
+# round stats
+var round_number = 1
+var question_number = 0
+var total_questions = 0
+var num_questions_answered = 0
+
 # player/user stats
 var score: int = 0
 
