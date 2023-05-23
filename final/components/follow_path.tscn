@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://final/scripts/CirclePathSpawn.gd" type="Script" id=1]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.133333, 0.133333, 0.133333, 0.294118 )
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( -31.7709, 0.937317, 31.7709, -0.937317, 290.604, 110.829, -14.3983, -49.384, 14.3983, 49.384, 411.849, 194.643, 63.253, 6.3307, -63.253, -6.3307, 271.694, 309.82, 2.07223, 31.7927, -2.07223, -31.7927, 151.278, 209.265, -47.412, 3.31641, 47.412, -3.31641, 246.111, 110.829, 0, 0, 0, 0, 289.492, 110.829 )
+}
+
+[node name="Circle" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 36.0
+margin_right = -346.0
+margin_bottom = -401.0
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 2 )
+
+[node name="Node2D" type="Node2D" parent="Panel"]
+
+[node name="Path2D" type="Path2D" parent="Panel/Node2D"]
+position = Vector2( -221, -135 )
+scale = Vector2( 1.79802, 1.84933 )
+curve = SubResource( 1 )
+script = ExtResource( 1 )

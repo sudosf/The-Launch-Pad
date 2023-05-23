@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://asserts/themes/main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://asserts/themes/button/btn_normal_red.tres" type="StyleBox" id=2]
@@ -6,11 +6,10 @@
 [ext_resource path="res://asserts/themes/title_label.tres" type="Theme" id=4]
 [ext_resource path="res://asserts/img/red-blood-drop-guttae-blood-dab970d241ab2886feb2860dc6bfbaf9.png" type="Texture" id=5]
 [ext_resource path="res://asserts/themes/button/btn_hover_red.tres" type="StyleBox" id=6]
-[ext_resource path="res://final/components/icon_option_btn.tscn" type="PackedScene" id=7]
+[ext_resource path="res://asserts/characters/Kid_Umbrella_NOBG.png" type="Texture" id=7]
 [ext_resource path="res://final/components/back_btn.tscn" type="PackedScene" id=8]
 [ext_resource path="res://final/components/curve_btn.tscn" type="PackedScene" id=9]
-[ext_resource path="res://asserts/characters/Mom_Umbrella_NOBG.png" type="Texture" id=10]
-[ext_resource path="res://final/scripts/multi_choice.gd" type="Script" id=11]
+[ext_resource path="res://final/components/up_down.tscn" type="PackedScene" id=10]
 [ext_resource path="res://final/components/TextBubble.tscn" type="PackedScene" id=12]
 
 [sub_resource type="Gradient" id=5]
@@ -35,10 +34,9 @@ corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 
-[node name="Control" type="Control"]
+[node name="floatUpDown" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 11 )
 
 [node name="background" type="TextureRect" parent="."]
 anchor_right = 1.0
@@ -53,13 +51,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 184.0
-margin_top = -231.0
-margin_right = 545.0
-margin_bottom = 273.0
-texture = ExtResource( 10 )
+margin_left = -526.0
+margin_top = -263.0
+margin_right = -169.0
+margin_bottom = 275.0
+texture = ExtResource( 7 )
 expand = true
 stretch_mode = 5
+flip_h = true
 
 [node name="backBtn" parent="." instance=ExtResource( 8 )]
 anchor_left = 0.5
@@ -72,10 +71,10 @@ margin_bottom = 74.0
 [node name="titleLbl" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -211.0
-margin_top = 68.0
-margin_right = 212.0
-margin_bottom = 122.0
+margin_left = -133.0
+margin_top = 17.0
+margin_right = 290.0
+margin_bottom = 71.0
 theme = ExtResource( 4 )
 text = "Round 1"
 align = 1
@@ -87,10 +86,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -396.0
-margin_top = -163.0
-margin_right = 392.0
-margin_bottom = -67.0
+margin_left = -304.0
+margin_top = -123.0
+margin_right = 484.0
+margin_bottom = -27.0
 custom_styles/panel = SubResource( 6 )
 
 [node name="continueBtn" parent="PanelProgress" instance=ExtResource( 9 )]
@@ -145,12 +144,22 @@ valign = 1
 autowrap = true
 
 [node name="PanelQuestion" parent="." instance=ExtResource( 3 )]
-margin_left = -452.0
-margin_top = -289.0
-margin_right = 239.0
-margin_bottom = -199.0
+margin_left = -234.0
+margin_top = -307.0
+margin_right = 457.0
+margin_bottom = -217.0
 
 [node name="TextBubble" parent="PanelQuestion" instance=ExtResource( 12 )]
+margin_left = -9.0
+margin_top = -2.0
+
+[node name="TextureRect" parent="PanelQuestion/TextBubble" index="0"]
+flip_h = true
+
+[node name="bg" parent="PanelQuestion/TextBubble" index="1"]
+margin_left = 22.0
+margin_top = -3.0
+margin_right = 3.0
 
 [node name="questionLbl" type="Label" parent="PanelQuestion"]
 anchor_top = 0.5
@@ -176,47 +185,14 @@ margin_bottom = 36.0
 texture = ExtResource( 5 )
 expand = true
 
-[node name="options" type="VBoxContainer" parent="."]
+[node name="UpDown" parent="." instance=ExtResource( 10 )]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -411.0
-margin_top = -107.0
-margin_right = 144.0
-margin_bottom = 160.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/separation = 20
+margin_left = -222.0
+margin_top = -196.0
+margin_right = 402.0
+margin_bottom = 311.0
 
-[node name="option1" parent="options" instance=ExtResource( 7 )]
-margin_left = 0.0
-margin_top = 0.0
-margin_right = 555.0
-margin_bottom = 75.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "ans 1"
-
-[node name="option2" parent="options" instance=ExtResource( 7 )]
-margin_left = 0.0
-margin_top = 95.0
-margin_right = 555.0
-margin_bottom = 171.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "ans 2"
-
-[node name="option3" parent="options" instance=ExtResource( 7 )]
-margin_left = 0.0
-margin_top = 191.0
-margin_right = 555.0
-margin_bottom = 267.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "ans 3"
-
-[connection signal="pressed" from="PanelProgress/continueBtn" to="." method="_on_continueBtn_pressed"]
-[connection signal="pressed" from="options/option1" to="." method="_on_option1_pressed"]
-[connection signal="pressed" from="options/option2" to="." method="_on_option2_pressed"]
-[connection signal="pressed" from="options/option3" to="." method="_on_option3_pressed"]
+[editable path="PanelQuestion/TextBubble"]

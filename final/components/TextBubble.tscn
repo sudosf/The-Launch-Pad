@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://asserts/img/Daco_1375381.png" type="Texture" id=1]
+
+[node name="TextBubble" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -12.0
+margin_top = -13.0
+margin_right = 20.0
+margin_bottom = 39.0
+texture = ExtResource( 1 )
+expand = true
+
+[node name="bg" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -4.0
+margin_right = -10.0
