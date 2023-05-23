@@ -9,6 +9,7 @@ var options_data = [
 ]
 
 var pos_offset = 100
+
 func _ready():
 	populate_options(options_data)
 

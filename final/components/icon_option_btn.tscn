@@ -15,11 +15,12 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[node name="Button" type="Button"]
+[node name="optionBtn" type="Button"]
 margin_left = 19.0
 margin_top = 23.0
-margin_right = 481.0
-margin_bottom = 89.0
+margin_right = 619.0
+margin_bottom = 103.0
+rect_min_size = Vector2( 600, 80 )
 theme = ExtResource( 1 )
 custom_styles/hover = ExtResource( 4 )
 custom_styles/focus = ExtResource( 3 )

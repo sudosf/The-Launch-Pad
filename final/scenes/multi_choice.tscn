@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://asserts/themes/main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://asserts/themes/button/btn_normal_red.tres" type="StyleBox" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://asserts/themes/title_label.tres" type="Theme" id=4]
 [ext_resource path="res://asserts/img/red-blood-drop-guttae-blood-dab970d241ab2886feb2860dc6bfbaf9.png" type="Texture" id=5]
 [ext_resource path="res://asserts/themes/button/btn_hover_red.tres" type="StyleBox" id=6]
-[ext_resource path="res://final/components/icon_option_btn.tscn" type="PackedScene" id=7]
 [ext_resource path="res://final/components/back_btn.tscn" type="PackedScene" id=8]
 [ext_resource path="res://final/components/curve_btn.tscn" type="PackedScene" id=9]
 [ext_resource path="res://asserts/characters/Mom_Umbrella_NOBG.png" type="Texture" id=10]
@@ -35,7 +34,7 @@ corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 
-[node name="Control" type="Control"]
+[node name="MultiChoice" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 11 )
@@ -183,40 +182,19 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -411.0
 margin_top = -107.0
-margin_right = 144.0
-margin_bottom = 160.0
+margin_right = 168.0
+margin_bottom = 229.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 580, 340 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 20
 
-[node name="option1" parent="options" instance=ExtResource( 7 )]
-margin_left = 0.0
-margin_top = 0.0
-margin_right = 555.0
-margin_bottom = 75.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "ans 1"
-
-[node name="option2" parent="options" instance=ExtResource( 7 )]
-margin_left = 0.0
-margin_top = 95.0
-margin_right = 555.0
-margin_bottom = 171.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "ans 2"
-
-[node name="option3" parent="options" instance=ExtResource( 7 )]
-margin_left = 0.0
-margin_top = 191.0
-margin_right = 555.0
-margin_bottom = 267.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "ans 3"
+[node name="answer" type="Label" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 14.0
+text = "number 1"
 
 [connection signal="pressed" from="PanelProgress/continueBtn" to="." method="_on_continueBtn_pressed"]
-[connection signal="pressed" from="options/option1" to="." method="_on_option1_pressed"]
-[connection signal="pressed" from="options/option2" to="." method="_on_option2_pressed"]
-[connection signal="pressed" from="options/option3" to="." method="_on_option3_pressed"]

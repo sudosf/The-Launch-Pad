@@ -16,8 +16,8 @@ config/icon="res://asserts/img/red-blood-drop-guttae-blood-dab970d241ab2886feb28
 
 [autoload]
 
-Network="*res://dev/scripts/Network.gd"
-Global="*res://dev/scripts/Global.gd"
+Global="*res://final/scripts/Global.gd"
+Network="*res://final/scripts/Network.gd"
 
 [display]
 
