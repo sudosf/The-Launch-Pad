@@ -18,13 +18,13 @@ func _ready():
 
 func check_answer():
 	
-	if selected_ans != correct_ans:
-		print("incorrrect")
+	if selected_ans == correct_ans:
 		Global.score += 10
-	else: print("corrrect!")
+		Global.correct_answered += 1
+		print("corrrect!")
+	else: print("incorrrect")
 	
-	Global.num_questions_answered += 1
-
+	
 func _on_optionBtn_pressed(text):
 	selected_ans = text # update current answer selected by user
 	$PanelProgress/continueBtn.disabled = false

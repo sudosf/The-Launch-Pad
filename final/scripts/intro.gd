@@ -21,10 +21,14 @@ func _ready():
 	Network.get_all_questions()
 
 func _process(delta):
+	
+	# TODO
+	# 	- set total questions
+	
 	if Global.response_collected:
 		Global.documents = Network.response # store all questions
-		Global.total_questions = Global.documents.size()
-		
+		# Global.total_questions = Global.documents.size()
+
 		Global.response_collected = false
 		instance_quiz() # set up quiz scenes
 		$playBtn.disabled = false
@@ -38,6 +42,7 @@ func instance_quiz():
 	for doc in Global.documents:
 		
 		if doc['type'] == "multi-choice": # set up multi-choice quiz questions
+			Global.total_questions += 1
 			var mc_instance = multi_choice.instance()
 			instance_mc_opt(mc_instance, doc["options"]) # add multi-choice options to scene
 			
@@ -47,7 +52,11 @@ func instance_quiz():
 			Global.quiz_scenes.push_back(mc_instance) # add scene to quiz-scene list
 
 		elif doc['type'] == "left-right": # set up left-right quiz questions
-			pass
+			var lr_instance = left_right.instance()
+			
+			instance_left_right_opt(lr_instance, doc['options'])
+			
+			Global.quiz_scenes.push_back(lr_instance)
 			
 		elif doc['type'] == "up-down": # set up up-down quiz questions
 			pass
@@ -62,7 +71,10 @@ func instance_mc_opt(mc_scene, options):
 		mc_scene.get_node("options").add_child(opt_instance)
 
 func instance_left_right_opt(lr_scene, options):
-	pass
+	for opt in options:
+		var opt_instance = lr_option.instance()
+		# opt_instance.text = opt
+		mc_scene.get_node("options").add_child(opt_instance)
 
 func instance_up_down_opt(up_scene, options):
 	pass

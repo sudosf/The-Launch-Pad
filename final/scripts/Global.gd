@@ -8,7 +8,7 @@ extends Node
 var round_number = 1
 var question_number = 0
 var total_questions = 0
-var num_questions_answered = 0
+var correct_answered = 0
 
 # player/user stats
 var score: int = 0
@@ -25,6 +25,11 @@ func _ready():
 
 # add next quiz question
 func add_next_scene():
+	print("Score: ", score)
+	print("questions: ", correct_answered)
+	
+	randomize()
+	quiz_scenes.shuffle() # add scenes randomly
 	if not quiz_scenes.empty():
 		get_tree().get_root().add_child(quiz_scenes.pop_front())
 	else:
