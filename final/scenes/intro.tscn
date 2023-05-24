@@ -13,6 +13,7 @@
 [sub_resource type="Theme" id=8]
 
 [sub_resource type="Gradient" id=5]
+interpolation_mode = 1
 offsets = PoolRealArray( 0.324022, 0.994413, 1 )
 colors = PoolColorArray( 0.0820312, 0.0820312, 0.0820312, 1, 0.587417, 0.586076, 0.586076, 1, 1, 1, 1, 1 )
 
