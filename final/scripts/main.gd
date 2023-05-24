@@ -2,7 +2,11 @@ extends Control
 
 
 func _ready():
-	pass
+	$overview.text = "Playing: Round " + str(Global.round_number)
+	
+	# set up round 1
+	$Panel1/questions.text = str(Global.total_questions) + " Questions"
+	$Panel1/QuestionNumber.text = str(Global.correct_answered) + " / " + str(Global.total_questions)
 
 
 func _on_continueBtn_pressed():

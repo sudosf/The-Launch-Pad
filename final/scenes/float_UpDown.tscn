@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://asserts/themes/main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://asserts/themes/button/btn_normal_red.tres" type="StyleBox" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://final/components/back_btn.tscn" type="PackedScene" id=8]
 [ext_resource path="res://final/components/curve_btn.tscn" type="PackedScene" id=9]
 [ext_resource path="res://final/components/up_down.tscn" type="PackedScene" id=10]
+[ext_resource path="res://final/scripts/float_UpDown.gd" type="Script" id=11]
 [ext_resource path="res://final/components/TextBubble.tscn" type="PackedScene" id=12]
 
 [sub_resource type="Gradient" id=5]
@@ -37,6 +38,7 @@ corner_radius_bottom_left = 30
 [node name="floatUpDown" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 11 )
 
 [node name="background" type="TextureRect" parent="."]
 anchor_right = 1.0
@@ -67,6 +69,18 @@ margin_left = -377.0
 margin_top = 18.0
 margin_right = -261.0
 margin_bottom = 74.0
+
+[node name="backLbl" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -344.0
+margin_top = 69.0
+margin_right = -42.0
+margin_bottom = 114.0
+theme = ExtResource( 1 )
+text = "Back to home"
+valign = 1
+autowrap = true
 
 [node name="titleLbl" type="Label" parent="."]
 anchor_left = 0.5
@@ -105,13 +119,13 @@ custom_styles/hover = ExtResource( 6 )
 custom_styles/normal = ExtResource( 2 )
 text = "Continue"
 
-[node name="Control" type="Control" parent="PanelProgress"]
+[node name="stats" type="Control" parent="PanelProgress"]
 margin_left = 20.0
 margin_top = 6.0
 margin_right = 364.0
 margin_bottom = 87.0
 
-[node name="progressLbl" type="Label" parent="PanelProgress/Control"]
+[node name="progressLbl" type="Label" parent="PanelProgress/stats"]
 margin_left = 25.0
 margin_top = 3.0
 margin_right = 327.0
@@ -121,21 +135,21 @@ text = "Quiz Progress"
 valign = 1
 autowrap = true
 
-[node name="ProgressBar" type="ProgressBar" parent="PanelProgress/Control"]
+[node name="ProgressBar" type="ProgressBar" parent="PanelProgress/stats"]
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -22.0
 margin_right = 244.0
 theme = ExtResource( 1 )
-value = 50.0
 
-[node name="numberLbl" type="Label" parent="PanelProgress/Control"]
+[node name="QuestionNumber" type="Label" parent="PanelProgress/stats"]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -48.0
-margin_top = -27.0
+margin_top = -62.0
+margin_right = 61.0
 theme = ExtResource( 1 )
 custom_styles/normal = SubResource( 7 )
 text = "5/10"
@@ -195,4 +209,13 @@ margin_top = -196.0
 margin_right = 402.0
 margin_bottom = 311.0
 
+[node name="answer" type="Label" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 14.0
+
+[connection signal="pressed" from="backBtn" to="." method="_on_backBtn_pressed"]
+[connection signal="pressed" from="PanelProgress/continueBtn" to="." method="_on_continueBtn_pressed"]
+
 [editable path="PanelQuestion/TextBubble"]
+[editable path="UpDown"]

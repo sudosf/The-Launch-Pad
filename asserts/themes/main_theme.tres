@@ -3,7 +3,7 @@
 [ext_resource path="res://asserts/fonts/MochiyPopOne-Regular.ttf" type="DynamicFontData" id=1]
 
 [sub_resource type="DynamicFont" id=2]
-size = 14
+size = 15
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 1 )

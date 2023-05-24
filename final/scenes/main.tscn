@@ -19,7 +19,7 @@ colors = PoolColorArray( 0.0820312, 0.0820312, 0.0820312, 1, 0.587417, 0.586076,
 gradient = SubResource( 5 )
 
 [sub_resource type="StyleBoxFlat" id=7]
-bg_color = Color( 0.6, 0.6, 0.6, 0.211765 )
+bg_color = Color( 0.972549, 0, 0, 0.439216 )
 corner_radius_top_left = 25
 corner_radius_top_right = 25
 corner_radius_bottom_right = 25
@@ -142,7 +142,7 @@ margin_top = 40.0
 margin_right = -57.0
 margin_bottom = 212.0
 
-[node name="description2" type="Label" parent="Panel1"]
+[node name="roundNumber" type="Label" parent="Panel1"]
 margin_left = 27.0
 margin_top = 9.0
 margin_right = 140.0
@@ -158,19 +158,9 @@ margin_top = 99.0
 margin_right = 281.0
 margin_bottom = 131.0
 theme = ExtResource( 1 )
-text = "10 Questions"
+text = "0 Questions"
 valign = 1
 autowrap = true
-
-[node name="logoIcon2" type="TextureRect" parent="Panel1"]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_left = 27.0
-margin_top = -41.0
-margin_right = 88.0
-margin_bottom = 13.0
-texture = ExtResource( 3 )
-expand = true
 
 [node name="ProgressBar" type="ProgressBar" parent="Panel1"]
 anchor_top = 1.0
@@ -180,16 +170,15 @@ margin_top = -38.0
 margin_right = 237.0
 margin_bottom = -20.0
 theme = ExtResource( 1 )
-value = 50.0
 
-[node name="number" type="Label" parent="Panel1"]
+[node name="QuestionNumber" type="Label" parent="Panel1"]
 margin_left = 252.0
 margin_top = 128.0
 margin_right = 300.0
 margin_bottom = 155.0
 theme = ExtResource( 1 )
 custom_styles/normal = SubResource( 8 )
-text = "5/10"
+text = "0/0"
 align = 1
 valign = 1
 autowrap = true
@@ -204,6 +193,16 @@ custom_colors/font_color = Color( 0.501961, 1, 0, 1 )
 text = "Easy"
 valign = 1
 autowrap = true
+
+[node name="logoIcon2" type="TextureRect" parent="Panel1"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 27.0
+margin_top = -41.0
+margin_right = 88.0
+margin_bottom = 13.0
+texture = ExtResource( 3 )
+expand = true
 
 [node name="Panel2" parent="." instance=ExtResource( 8 )]
 modulate = Color( 1, 1, 1, 0.313726 )
@@ -228,7 +227,7 @@ margin_top = 99.0
 margin_right = 281.0
 margin_bottom = 131.0
 theme = ExtResource( 1 )
-text = "17 Questions"
+text = "0 Questions"
 valign = 1
 autowrap = true
 
@@ -250,7 +249,6 @@ margin_top = -38.0
 margin_right = 237.0
 margin_bottom = -20.0
 theme = ExtResource( 1 )
-value = 30.0
 
 [node name="number" type="Label" parent="Panel2"]
 margin_left = 252.0
@@ -259,7 +257,7 @@ margin_right = 300.0
 margin_bottom = 155.0
 theme = ExtResource( 1 )
 custom_styles/normal = SubResource( 8 )
-text = "3/10"
+text = "0/0"
 align = 1
 valign = 1
 autowrap = true
@@ -298,7 +296,7 @@ margin_top = 99.0
 margin_right = 281.0
 margin_bottom = 131.0
 theme = ExtResource( 1 )
-text = "8 Questions"
+text = "0 Questions"
 valign = 1
 autowrap = true
 
@@ -320,7 +318,6 @@ margin_top = -38.0
 margin_right = 237.0
 margin_bottom = -20.0
 theme = ExtResource( 1 )
-value = 10.0
 
 [node name="number" type="Label" parent="Panel3"]
 margin_left = 252.0
@@ -329,7 +326,7 @@ margin_right = 300.0
 margin_bottom = 155.0
 theme = ExtResource( 1 )
 custom_styles/normal = SubResource( 8 )
-text = "1/10"
+text = "0/0"
 align = 1
 valign = 1
 autowrap = true

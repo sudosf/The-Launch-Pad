@@ -1,16 +1,17 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://asserts/themes/main_theme.tres" type="Theme" id=1]
+[ext_resource path="res://asserts/img/red-blood-drop-guttae-blood-dab970d241ab2886feb2860dc6bfbaf9.png" type="Texture" id=1]
 [ext_resource path="res://asserts/themes/button/btn_normal_red.tres" type="StyleBox" id=2]
-[ext_resource path="res://final/components/PanelContainer.tscn" type="PackedScene" id=3]
-[ext_resource path="res://asserts/themes/title_label.tres" type="Theme" id=4]
-[ext_resource path="res://asserts/img/red-blood-drop-guttae-blood-dab970d241ab2886feb2860dc6bfbaf9.png" type="Texture" id=5]
-[ext_resource path="res://asserts/themes/button/btn_hover_red.tres" type="StyleBox" id=6]
-[ext_resource path="res://asserts/characters/Dad_Umbrella_NOBG.png" type="Texture" id=7]
-[ext_resource path="res://final/components/back_btn.tscn" type="PackedScene" id=8]
-[ext_resource path="res://final/components/curve_btn.tscn" type="PackedScene" id=9]
-[ext_resource path="res://final/components/TextBubble.tscn" type="PackedScene" id=12]
-[ext_resource path="res://final/components/circle.tscn" type="PackedScene" id=13]
+[ext_resource path="res://final/components/back_btn.tscn" type="PackedScene" id=3]
+[ext_resource path="res://final/components/PanelContainer.tscn" type="PackedScene" id=4]
+[ext_resource path="res://asserts/themes/main_theme.tres" type="Theme" id=5]
+[ext_resource path="res://asserts/themes/title_label.tres" type="Theme" id=6]
+[ext_resource path="res://asserts/themes/button/btn_hover_red.tres" type="StyleBox" id=7]
+[ext_resource path="res://final/components/curve_btn.tscn" type="PackedScene" id=8]
+[ext_resource path="res://asserts/characters/Dad_Umbrella_NOBG.png" type="Texture" id=9]
+[ext_resource path="res://final/components/TextBubble.tscn" type="PackedScene" id=10]
+[ext_resource path="res://final/components/circle.tscn" type="PackedScene" id=11]
+[ext_resource path="res://final/scripts/float_Circle.gd" type="Script" id=12]
 
 [sub_resource type="Gradient" id=5]
 interpolation_mode = 1
@@ -37,6 +38,7 @@ corner_radius_bottom_left = 30
 [node name="FloatCircle" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 12 )
 
 [node name="background" type="TextureRect" parent="."]
 anchor_right = 1.0
@@ -55,18 +57,30 @@ margin_left = -496.0
 margin_top = -247.0
 margin_right = -135.0
 margin_bottom = 257.0
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 expand = true
 stretch_mode = 5
 flip_h = true
 
-[node name="backBtn" parent="." instance=ExtResource( 8 )]
+[node name="backBtn" parent="." instance=ExtResource( 3 )]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -377.0
 margin_top = 18.0
 margin_right = -261.0
 margin_bottom = 74.0
+
+[node name="backLbl" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -344.0
+margin_top = 69.0
+margin_right = -42.0
+margin_bottom = 114.0
+theme = ExtResource( 5 )
+text = "Back to home"
+valign = 1
+autowrap = true
 
 [node name="titleLbl" type="Label" parent="."]
 anchor_left = 0.5
@@ -75,7 +89,7 @@ margin_left = -133.0
 margin_top = 17.0
 margin_right = 290.0
 margin_bottom = 71.0
-theme = ExtResource( 4 )
+theme = ExtResource( 6 )
 text = "Round 1"
 align = 1
 valign = 1
@@ -92,7 +106,7 @@ margin_right = 484.0
 margin_bottom = -27.0
 custom_styles/panel = SubResource( 6 )
 
-[node name="continueBtn" parent="PanelProgress" instance=ExtResource( 9 )]
+[node name="continueBtn" parent="PanelProgress" instance=ExtResource( 8 )]
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
@@ -101,55 +115,55 @@ margin_left = -200.0
 margin_top = -33.0
 margin_right = -40.0
 margin_bottom = 31.0
-custom_styles/hover = ExtResource( 6 )
+custom_styles/hover = ExtResource( 7 )
 custom_styles/normal = ExtResource( 2 )
 text = "Continue"
 
-[node name="Control" type="Control" parent="PanelProgress"]
+[node name="stats" type="Control" parent="PanelProgress"]
 margin_left = 20.0
 margin_top = 6.0
 margin_right = 364.0
 margin_bottom = 87.0
 
-[node name="progressLbl" type="Label" parent="PanelProgress/Control"]
+[node name="progressLbl" type="Label" parent="PanelProgress/stats"]
 margin_left = 25.0
 margin_top = 3.0
 margin_right = 327.0
 margin_bottom = 48.0
-theme = ExtResource( 1 )
+theme = ExtResource( 5 )
 text = "Quiz Progress"
 valign = 1
 autowrap = true
 
-[node name="ProgressBar" type="ProgressBar" parent="PanelProgress/Control"]
+[node name="ProgressBar" type="ProgressBar" parent="PanelProgress/stats"]
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -22.0
 margin_right = 244.0
-theme = ExtResource( 1 )
-value = 50.0
+theme = ExtResource( 5 )
 
-[node name="numberLbl" type="Label" parent="PanelProgress/Control"]
+[node name="QuestionNumber" type="Label" parent="PanelProgress/stats"]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -48.0
-margin_top = -27.0
-theme = ExtResource( 1 )
+margin_top = -44.0
+margin_right = 34.0
+theme = ExtResource( 5 )
 custom_styles/normal = SubResource( 7 )
 text = "5/10"
 align = 1
 valign = 1
 autowrap = true
 
-[node name="PanelQuestion" parent="." instance=ExtResource( 3 )]
+[node name="PanelQuestion" parent="." instance=ExtResource( 4 )]
 margin_left = -234.0
 margin_top = -307.0
 margin_right = 457.0
 margin_bottom = -217.0
 
-[node name="TextBubble" parent="PanelQuestion" instance=ExtResource( 12 )]
+[node name="TextBubble" parent="PanelQuestion" instance=ExtResource( 10 )]
 margin_left = -9.0
 margin_top = -2.0
 
@@ -165,10 +179,10 @@ margin_right = 3.0
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 45.0
-margin_top = -25.0
-margin_right = 505.0
-margin_bottom = 27.0
-theme = ExtResource( 1 )
+margin_top = -41.0
+margin_right = 564.0
+margin_bottom = 35.0
+theme = ExtResource( 5 )
 text = "Question 1"
 valign = 1
 autowrap = true
@@ -182,15 +196,31 @@ margin_left = -120.0
 margin_top = -30.0
 margin_right = -48.0
 margin_bottom = 36.0
-texture = ExtResource( 5 )
+texture = ExtResource( 1 )
 expand = true
 
-[node name="Circle" parent="." instance=ExtResource( 13 )]
-margin_left = 346.0
-margin_top = 259.0
-margin_right = -42.0
-margin_bottom = -169.0
+[node name="Circle" parent="." instance=ExtResource( 11 )]
+margin_left = -177.0
+margin_top = -238.0
+margin_right = 537.0
+margin_bottom = 264.0
 
+[node name="Panel" parent="Circle" index="0"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -330.0
+margin_top = -193.0
+margin_right = 250.0
+margin_bottom = 298.0
+
+[node name="answer" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+
+[connection signal="pressed" from="backBtn" to="." method="_on_backBtn_pressed"]
 [connection signal="pressed" from="PanelProgress/continueBtn" to="." method="_on_continueBtn_pressed"]
 
 [editable path="PanelQuestion/TextBubble"]
+[editable path="Circle"]

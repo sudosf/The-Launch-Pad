@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://final/scripts/end.gd" type="Script" id=1]
 [ext_resource path="res://asserts/themes/title_label.tres" type="Theme" id=2]
@@ -18,6 +18,13 @@ colors = PoolColorArray( 0.0820312, 0.0820312, 0.0820312, 1, 0.587417, 0.586076,
 
 [sub_resource type="GradientTexture" id=2]
 gradient = SubResource( 5 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.113725, 0.105882, 0.105882, 1 )
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
 
 [sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0, 0, 0, 0.270588 )
@@ -67,23 +74,41 @@ expand = true
 flip_v = true
 
 [node name="TextBubble" parent="." instance=ExtResource( 7 )]
-margin_left = 46.0
-margin_top = 46.0
-margin_right = -268.0
-margin_bottom = -723.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -431.0
+margin_top = -415.0
+margin_right = 255.0
+margin_bottom = -284.0
+
+[node name="TextureRect" parent="TextBubble" index="0"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -355.0
+margin_top = -84.5
+margin_right = 363.0
+margin_bottom = 98.5
 
 [node name="bg" parent="TextBubble" index="1"]
+margin_left = 2.0
 margin_top = -2.0
 margin_right = -17.0
-margin_bottom = -12.0
+margin_bottom = -28.0
+custom_styles/panel = SubResource( 11 )
 
 [node name="result" type="Label" parent="TextBubble"]
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-margin_left = -402.0
-margin_top = -11.0
-margin_right = 386.0
-margin_bottom = 121.0
+anchor_bottom = 0.5
+margin_left = -341.0
+margin_top = -67.5
+margin_right = 333.0
+margin_bottom = 36.5
 theme = ExtResource( 2 )
 text = "You <win/lose>"
 align = 1

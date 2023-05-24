@@ -14,7 +14,7 @@ func _ready():
 	correct_ans = $answer.text
 	
 	# set up all options to detect correct answers
-	for opt in $LeftRight/options.get_children():
+	for opt in $UpDown/options.get_children():
 		# [opt.text] contains option data
 		var opt_text = opt.get_node("option").text
 		opt.get_node("option").connect("pressed", self, "_on_optionBtn_pressed", [opt_text])
@@ -40,3 +40,4 @@ func _on_continueBtn_pressed():
 
 func _on_backBtn_pressed():
 	Global.update_quiz_progress()
+

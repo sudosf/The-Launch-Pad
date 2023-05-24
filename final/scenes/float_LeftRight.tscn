@@ -38,6 +38,7 @@ corner_radius_bottom_left = 30
 [node name="FloatLeftRight" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -1022, -55 )
 script = ExtResource( 11 )
 
 [node name="background" type="TextureRect" parent="."]
@@ -69,6 +70,18 @@ margin_left = -377.0
 margin_top = 18.0
 margin_right = -261.0
 margin_bottom = 74.0
+
+[node name="backLbl" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -344.0
+margin_top = 69.0
+margin_right = -42.0
+margin_bottom = 114.0
+theme = ExtResource( 1 )
+text = "Back to home"
+valign = 1
+autowrap = true
 
 [node name="titleLbl" type="Label" parent="."]
 anchor_left = 0.5
@@ -107,13 +120,13 @@ custom_styles/hover = ExtResource( 6 )
 custom_styles/normal = ExtResource( 2 )
 text = "Continue"
 
-[node name="Control" type="Control" parent="PanelProgress"]
+[node name="stats" type="Control" parent="PanelProgress"]
 margin_left = 20.0
 margin_top = 6.0
 margin_right = 364.0
 margin_bottom = 87.0
 
-[node name="progressLbl" type="Label" parent="PanelProgress/Control"]
+[node name="progressLbl" type="Label" parent="PanelProgress/stats"]
 margin_left = 25.0
 margin_top = 3.0
 margin_right = 327.0
@@ -123,21 +136,21 @@ text = "Quiz Progress"
 valign = 1
 autowrap = true
 
-[node name="ProgressBar" type="ProgressBar" parent="PanelProgress/Control"]
+[node name="ProgressBar" type="ProgressBar" parent="PanelProgress/stats"]
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -22.0
 margin_right = 244.0
 theme = ExtResource( 1 )
-value = 50.0
 
-[node name="numberLbl" type="Label" parent="PanelProgress/Control"]
+[node name="QuestionNumber" type="Label" parent="PanelProgress/stats"]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -48.0
-margin_top = -27.0
+margin_top = -65.0
+margin_right = 49.0
 theme = ExtResource( 1 )
 custom_styles/normal = SubResource( 7 )
 text = "5/10"
@@ -194,9 +207,11 @@ margin_right = -32.0
 margin_bottom = -233.0
 
 [node name="answer" type="Label" parent="."]
+visible = false
 margin_right = 40.0
 margin_bottom = 14.0
 
+[connection signal="pressed" from="backBtn" to="." method="_on_backBtn_pressed"]
 [connection signal="pressed" from="PanelProgress/continueBtn" to="." method="_on_continueBtn_pressed"]
 
 [editable path="PanelQuestion/TextBubble"]

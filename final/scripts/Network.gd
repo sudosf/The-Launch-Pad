@@ -6,32 +6,17 @@ extends Control
 """
 
 var request_complete: bool = false
-# var response_collected: bool = false
-# var is_requesting: bool = false
-
 var response # response data from API endpoints
 
 var http_request : HTTPRequest = HTTPRequest.new()
 const SERVER_URL = "https://tlp-api.onrender.com"
 
-var error_status = "OK"
-# var request_queue: Array = [] # hold all requests
+var error_status = "OK" # status code to detect server errors
 
 func _ready():
-	randomize()
+	# randomize()
 	add_child(http_request) # Connect our request handler:
-	# warning-ignore: return_value_discarded
 	http_request.connect("request_completed", self, "_http_request_completed")
-
-#func _process(delta):
-#	if is_requesting:
-#		return
-#	if request_queue.empty() and response_collected:
-#		response_collected = false
-#		return
-#
-#	is_requesting = true
-#	send_request(request_queue.pop_front())
 
 func send_request(url): # simple get request
 	var client = HTTPClient.new()
@@ -58,7 +43,6 @@ func _http_request_completed(_result, _response_code, _headers, _body):
 	print("Network status code: ", _response_code)
 	# print(response, "\n")
 	request_complete = true
-	# is_requesting  = false
 
 """
 	# Available endpoints to use 

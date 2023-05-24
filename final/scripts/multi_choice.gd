@@ -1,13 +1,15 @@
 extends Control
 
 """
-	# option data (for $options VBoxContainer) is set in "intro.gd" script
+	# option data (mutli-choice options) is set in "intro.gd" script
 """
 
 var correct_ans 
 var selected_ans
 
 func _ready():
+	$PanelProgress/stats/QuestionNumber.text = str(Global.question_number) + " / " + str(Global.total_questions)
+	
 	$PanelProgress/continueBtn.disabled = true
 	correct_ans = $answer.text
 	
@@ -24,6 +26,8 @@ func check_answer():
 		print("corrrect!")
 	else: print("incorrrect")
 	
+	Global.question_number += 1
+	
 	
 func _on_optionBtn_pressed(text):
 	selected_ans = text # update current answer selected by user
@@ -31,4 +35,8 @@ func _on_optionBtn_pressed(text):
 
 func _on_continueBtn_pressed():
 	check_answer()
+	queue_free()
 	Global.add_next_scene()
+
+func _on_backBtn_pressed():
+	Global.update_quiz_progress()

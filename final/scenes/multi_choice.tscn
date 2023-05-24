@@ -68,6 +68,18 @@ margin_top = 28.0
 margin_right = -318.0
 margin_bottom = 84.0
 
+[node name="backLbl" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -401.0
+margin_top = 81.0
+margin_right = -99.0
+margin_bottom = 126.0
+theme = ExtResource( 1 )
+text = "Back to home"
+valign = 1
+autowrap = true
+
 [node name="round" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
@@ -127,15 +139,15 @@ anchor_bottom = 1.0
 margin_top = -22.0
 margin_right = 244.0
 theme = ExtResource( 1 )
-value = 50.0
 
-[node name="numberLbl" type="Label" parent="PanelProgress/stats"]
+[node name="QuestionNumber" type="Label" parent="PanelProgress/stats"]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -48.0
-margin_top = -27.0
+margin_top = -58.0
+margin_right = 40.0
 theme = ExtResource( 1 )
 custom_styles/normal = SubResource( 7 )
 text = "5/10"
@@ -197,4 +209,5 @@ margin_right = 40.0
 margin_bottom = 14.0
 text = "number 1"
 
+[connection signal="pressed" from="backBtn" to="." method="_on_backBtn_pressed"]
 [connection signal="pressed" from="PanelProgress/continueBtn" to="." method="_on_continueBtn_pressed"]
