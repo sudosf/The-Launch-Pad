@@ -47,11 +47,13 @@ flip_v = true
 
 [node name="title" type="Label" parent="."]
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-margin_left = -395.0
-margin_top = 44.0
-margin_right = 393.0
-margin_bottom = 176.0
+anchor_bottom = 0.5
+margin_left = -403.0
+margin_top = -387.0
+margin_right = 385.0
+margin_bottom = -255.0
 theme = ExtResource( 2 )
 text = "NAME OF QUIZ"
 align = 1
@@ -61,11 +63,13 @@ uppercase = true
 
 [node name="description" type="Label" parent="."]
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-margin_left = -353.0
-margin_top = 150.0
-margin_right = 323.0
-margin_bottom = 199.0
+anchor_bottom = 0.5
+margin_left = -356.0
+margin_top = -297.0
+margin_right = 320.0
+margin_bottom = -248.0
 theme = ExtResource( 1 )
 text = "Description of quiz game"
 align = 1
@@ -74,11 +78,13 @@ autowrap = true
 
 [node name="logoIcon" type="TextureRect" parent="."]
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-margin_left = 115.0
-margin_top = 157.0
-margin_right = 197.0
-margin_bottom = 243.0
+anchor_bottom = 0.5
+margin_left = 121.0
+margin_top = -280.0
+margin_right = 203.0
+margin_bottom = -194.0
 texture = ExtResource( 3 )
 expand = true
 
@@ -96,13 +102,13 @@ expand = true
 
 [node name="Panel" type="Panel" parent="."]
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -345.0
-margin_top = -162.0
-margin_right = 349.0
-margin_bottom = -16.0
+anchor_bottom = 0.5
+margin_left = -333.0
+margin_top = 251.0
+margin_right = 361.0
+margin_bottom = 397.0
 custom_styles/panel = SubResource( 6 )
 
 [node name="apple" parent="Panel" instance=ExtResource( 5 )]
@@ -140,10 +146,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -162.0
-margin_top = 93.0
-margin_right = 154.0
-margin_bottom = 211.0
+margin_left = -170.0
+margin_top = 110.0
+margin_right = 146.0
+margin_bottom = 228.0
 custom_fonts/font = SubResource( 7 )
 custom_styles/normal = ExtResource( 6 )
 text = "Play"
