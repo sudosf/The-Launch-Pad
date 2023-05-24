@@ -5,15 +5,15 @@ onready var multi_choice = preload("res://final/scenes/multi_choice.tscn")
 onready var mc_option = preload("res://final/components/icon_option_btn.tscn")
 
 # float left-right instances
-onready var left_right = preload("res://final/components/left_right.tscn")
+onready var left_right = preload("res://final/scenes/float_LeftRight.tscn")
 onready var lr_option = preload("res://final/components/left_right_option.tscn")
 
 # float up-down instances
-onready var up_down = preload("res://final/components/left_right.tscn")
+onready var up_down = preload("res://final/scenes/float_UpDown.tscn")
 onready var up_option = preload("res://final/components/up_down_option.tscn")
 
 # float circle instances
-onready var circle = preload("res://final/components/circle.tscn")
+onready var circle = preload("res://final/scenes/float_circle.tscn")
 onready var circle_option = preload("res://final/components/option_btn.tscn")
 
 func _ready():
@@ -52,9 +52,13 @@ func instance_quiz():
 			Global.quiz_scenes.push_back(mc_instance) # add scene to quiz-scene list
 
 		elif doc['type'] == "left-right": # set up left-right quiz questions
+			Global.total_questions += 1
 			var lr_instance = left_right.instance()
 			
 			instance_left_right_opt(lr_instance, doc['options'])
+			
+			lr_instance.get_node("answer").text = doc["answer"]
+			lr_instance.get_node("PanelQuestion/questionLbl").text = doc["question"]
 			
 			Global.quiz_scenes.push_back(lr_instance)
 			
@@ -71,10 +75,22 @@ func instance_mc_opt(mc_scene, options):
 		mc_scene.get_node("options").add_child(opt_instance)
 
 func instance_left_right_opt(lr_scene, options):
+	var pos_offset = 100
+	var count = 0
 	for opt in options:
 		var opt_instance = lr_option.instance()
-		# opt_instance.text = opt
-		mc_scene.get_node("options").add_child(opt_instance)
+		opt_instance.get_node("option").text = opt
+		
+		if count % 2 == 0:
+			opt_instance.get_node("neg_direction").text = str(-1)
+			opt_instance.get_node("offset").text = str(pos_offset)
+		else: 
+			opt_instance.get_node("offset").text = str(pos_offset)
+		
+		pos_offset += 100
+		count += 1
+		
+		lr_scene.get_node("LeftRight/options").add_child(opt_instance)
 
 func instance_up_down_opt(up_scene, options):
 	pass

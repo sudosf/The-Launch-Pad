@@ -10,7 +10,8 @@ var options_data = [
 
 var pos_offset = 100
 func _ready():
-	populate_options(options_data)
+	# populate_options(options_data)
+	pass
 
 func populate_options(data):
 	var count = 0

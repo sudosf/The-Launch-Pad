@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://asserts/themes/main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://asserts/themes/button/btn_normal_red.tres" type="StyleBox" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://final/components/back_btn.tscn" type="PackedScene" id=8]
 [ext_resource path="res://final/components/curve_btn.tscn" type="PackedScene" id=9]
 [ext_resource path="res://final/components/left_right.tscn" type="PackedScene" id=10]
+[ext_resource path="res://final/scripts/float_LeftRight.gd" type="Script" id=11]
 [ext_resource path="res://final/components/TextBubble.tscn" type="PackedScene" id=12]
 
 [sub_resource type="Gradient" id=5]
@@ -37,6 +38,7 @@ corner_radius_bottom_left = 30
 [node name="FloatLeftRight" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 11 )
 
 [node name="background" type="TextureRect" parent="."]
 anchor_right = 1.0
@@ -188,8 +190,12 @@ expand = true
 [node name="LeftRight" parent="." instance=ExtResource( 10 )]
 margin_left = 287.0
 margin_top = 267.0
-margin_right = -21.0
-margin_bottom = -144.0
+margin_right = -32.0
+margin_bottom = -233.0
+
+[node name="answer" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
 
 [connection signal="pressed" from="PanelProgress/continueBtn" to="." method="_on_continueBtn_pressed"]
 

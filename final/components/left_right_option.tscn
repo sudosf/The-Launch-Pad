@@ -13,8 +13,8 @@ margin_bottom = 14.0
 text = "250"
 
 [node name="option" parent="." instance=ExtResource( 2 )]
-margin_right = 428.0
-margin_bottom = 94.0
+margin_right = 431.0
+margin_bottom = 87.0
 
 [node name="neg_direction" type="Label" parent="."]
 visible = false
