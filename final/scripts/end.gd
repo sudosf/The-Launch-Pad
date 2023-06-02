@@ -20,4 +20,5 @@ func _ready():
 
 func _on_playBtn_pressed():
 	Global.reset_progress()
-	get_tree().change_scene("res://final/scenes/intro.tscn")
+	Global.custom_change_scene("res://final/scenes/begin.tscn")
+

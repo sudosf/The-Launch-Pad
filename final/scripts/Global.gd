@@ -15,7 +15,7 @@ var correct_answered = 0
 
 # check if http request is complete to store documents from DB
 var response_collected: bool = false
-var documents # all documents in Collection('questions)
+var documents: Array # all documents in Collection('questions)
 
 var saved_circle_options
 
@@ -35,12 +35,16 @@ func add_next_scene():
 	if not quiz_scenes.empty():
 		get_tree().get_root().add_child(quiz_scenes.pop_front())
 	else:
-		get_tree().change_scene("res://final/scenes/end.tscn")
+		var error_code = get_tree().change_scene("res://final/scenes/end.tscn")
+		if error_code != 0:
+			print("Change scene Error: ", error_code)
 
 func update_quiz_progress():
 	total_questions = quiz_scenes.size()
 	question_number = 0
-	get_tree().change_scene("res://final/scenes/main.tscn")
+	var error_code = get_tree().change_scene("res://final/scenes/main.tscn")
+	if error_code != 0:
+		print("Change scene Error: ", error_code)
 
 func reset_progress():
 	round_number = 1
@@ -50,3 +54,8 @@ func reset_progress():
 	# user stats
 	score = 0
 	correct_answered = 0
+
+func custom_change_scene(scene_path):
+	var error_code = get_tree().change_scene(scene_path)
+	if error_code != 0:
+		print("Change scene Error: ", error_code)

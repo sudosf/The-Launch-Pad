@@ -116,4 +116,19 @@ func instance_up_down_opt(up_scene, options):
 
 
 func _on_playBtn_pressed():
-	get_tree().change_scene("res://final/scenes/main.tscn")
+	Global.custom_change_scene("res://final/scenes/main.tscn")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

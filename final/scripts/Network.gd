@@ -18,26 +18,29 @@ func _ready():
 	add_child(http_request) # Connect our request handler:
 	http_request.connect("request_completed", self, "_http_request_completed")
 
-func send_request(url): # simple get request
-	var client = HTTPClient.new()
-	
+func send_request(url): 
 	# Make request to the server:
 	var err_request = http_request.request(url)
 	if err_request != OK: # Check if there were problems:
 		printerr("HTTPRequest error: " + String(err_request))
 		error_status = "HTTPRequest error"
-		get_tree().change_scene("res://final/scenes/error.tscn")
+		Global.custom_change_scene("res://final/scenes/error.tscn")
+		return
 
 func _http_request_completed(_result, _response_code, _headers, _body):
 	error_status = str(_response_code)
 	if _result != HTTPRequest.RESULT_SUCCESS:
 		printerr("Error w/ connection: " + String(_result))
-		get_tree().change_scene("res://final/scenes/error.tscn")
+		
+		Global.custom_change_scene("res://final/scenes/error.tscn")
+		return
 
 	if (_response_code != 200):
 		printerr("Error w/ connection: " + String(_result))
 		print("Network status code: ", _response_code)
-		get_tree().change_scene("res://final/scenes/error.tscn")
+		
+		Global.custom_change_scene("res://final/scenes/error.tscn")
+		return
 	
 	response = parse_json(_body.get_string_from_utf8())
 	print("Network status code: ", _response_code)

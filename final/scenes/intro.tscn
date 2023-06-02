@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://asserts/themes/main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://asserts/img/Screenshot%202023-05-23%20165435.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://asserts/themes/button/btn_normal_red.tres" type="StyleBox" id=6]
 [ext_resource path="res://asserts/themes/button/btn_hover_red.tres" type="StyleBox" id=7]
 [ext_resource path="res://asserts/fonts/MochiyPopOne-Regular.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://final/scripts/intro.gd" type="Script" id=9]
 [ext_resource path="res://asserts/img/Screenshot%202023-05-23%20094802.png" type="Texture" id=10]
 [ext_resource path="res://asserts/img/Screenshot%202023-05-23%20094858.png" type="Texture" id=11]
 [ext_resource path="res://asserts/img/Screenshot%202023-05-23%20094847.png" type="Texture" id=12]
@@ -46,12 +47,13 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 shadow_color = Color( 0, 0, 0, 0.756863 )
 
-[node name="Control" type="Control"]
+[node name="Intro" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = SubResource( 8 )
+script = ExtResource( 9 )
 
 [node name="background" type="TextureRect" parent="."]
 anchor_right = 1.0
@@ -166,7 +168,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/panel = SubResource( 6 )
 
-[node name="apple" parent="Panel" instance=ExtResource( 5 )]
+[node name="appleBtn" parent="Panel" instance=ExtResource( 5 )]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -180,7 +182,7 @@ size_flags_vertical = 3
 disabled = true
 text = "Apple ID"
 
-[node name="google" parent="Panel" instance=ExtResource( 5 )]
+[node name="googleBtn" parent="Panel" instance=ExtResource( 5 )]
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = 109.0
@@ -192,7 +194,7 @@ size_flags_vertical = 3
 disabled = true
 text = "Google"
 
-[node name="email" parent="Panel" instance=ExtResource( 5 )]
+[node name="emailBtn" parent="Panel" instance=ExtResource( 5 )]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -243.0
@@ -228,3 +230,5 @@ texture = ExtResource( 21 )
 position = Vector2( 1208.96, 49.92 )
 scale = Vector2( 1.06119, 1.05 )
 texture = ExtResource( 22 )
+
+[connection signal="pressed" from="Panel/emailBtn" to="." method="_on_emailBtn_pressed"]

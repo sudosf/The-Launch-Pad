@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://asserts/themes/main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://asserts/themes/title_label.tres" type="Theme" id=2]
+[ext_resource path="res://final/scripts/sign_in.gd" type="Script" id=3]
 [ext_resource path="res://final/components/curve_btn.tscn" type="PackedScene" id=5]
 [ext_resource path="res://asserts/themes/button/btn_normal_red.tres" type="StyleBox" id=6]
 [ext_resource path="res://asserts/themes/button/btn_hover_red.tres" type="StyleBox" id=7]
@@ -24,6 +25,7 @@ corner_radius_bottom_left = 30
 [node name="SignUp" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 3 )
 
 [node name="background" type="TextureRect" parent="."]
 anchor_right = 1.0
@@ -64,10 +66,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -410.0
-margin_top = -112.5
-margin_right = 400.939
-margin_bottom = -31.5
+margin_left = -413.0
+margin_top = -176.5
+margin_right = 397.939
+margin_bottom = -95.5
 theme = ExtResource( 1 )
 align = 1
 placeholder_text = "Username"
@@ -78,16 +80,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -403.0
-margin_top = 13.5
-margin_right = 407.939
-margin_bottom = 94.5
+margin_left = -407.0
+margin_top = -21.5
+margin_right = 403.939
+margin_bottom = 59.5
 theme = ExtResource( 1 )
 align = 1
 placeholder_text = "Password"
 placeholder_alpha = 0.618
 
-[node name="signUpBtn" parent="Panel" instance=ExtResource( 5 )]
+[node name="signInBtn" parent="Panel" instance=ExtResource( 5 )]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -130,10 +132,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 67.0
-margin_top = -22.0
-margin_right = 229.0
-margin_bottom = 26.0
+margin_left = 66.0
+margin_top = -15.0
+margin_right = 166.0
+margin_bottom = 15.0
 custom_styles/hover = ExtResource( 7 )
 custom_styles/normal = ExtResource( 6 )
 text = "Sign Up"
+
+[connection signal="pressed" from="Panel/signInBtn" to="." method="_on_signInBtn_pressed"]
+[connection signal="pressed" from="Control/signUpBtn" to="." method="_on_signUpBtn_pressed"]

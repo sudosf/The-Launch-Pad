@@ -11,3 +11,6 @@ func _ready():
 
 func _on_continueBtn_pressed():
 	Global.add_next_scene()
+
+func _on_backBtn_pressed():
+	Global.custom_change_scene("res://final/scenes/begin.tscn")
