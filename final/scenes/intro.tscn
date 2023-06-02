@@ -1,20 +1,34 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://asserts/themes/main_theme.tres" type="Theme" id=1]
-[ext_resource path="res://asserts/themes/title_label.tres" type="Theme" id=2]
-[ext_resource path="res://asserts/img/red-blood-drop-guttae-blood-dab970d241ab2886feb2860dc6bfbaf9.png" type="Texture" id=3]
-[ext_resource path="res://asserts/img/image-asset.png" type="Texture" id=4]
+[ext_resource path="res://asserts/img/Screenshot%202023-05-23%20165435.png" type="Texture" id=2]
+[ext_resource path="res://asserts/img/Screenshot%202023-05-23%20094813.png" type="Texture" id=3]
+[ext_resource path="res://asserts/characters/Dad_NOBG.png" type="Texture" id=4]
 [ext_resource path="res://final/components/curve_btn.tscn" type="PackedScene" id=5]
 [ext_resource path="res://asserts/themes/button/btn_normal_red.tres" type="StyleBox" id=6]
 [ext_resource path="res://asserts/themes/button/btn_hover_red.tres" type="StyleBox" id=7]
 [ext_resource path="res://asserts/fonts/MochiyPopOne-Regular.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://final/scripts/intro.gd" type="Script" id=9]
+[ext_resource path="res://asserts/img/Screenshot%202023-05-23%20094802.png" type="Texture" id=10]
+[ext_resource path="res://asserts/img/Screenshot%202023-05-23%20094858.png" type="Texture" id=11]
+[ext_resource path="res://asserts/img/Screenshot%202023-05-23%20094847.png" type="Texture" id=12]
+[ext_resource path="res://asserts/img/Screenshot%202023-05-23%20094838.png" type="Texture" id=13]
+[ext_resource path="res://asserts/img/Screenshot%202023-05-23%20094737.png" type="Texture" id=14]
+[ext_resource path="res://asserts/img/Screenshot%202023-05-23%20094821.png" type="Texture" id=15]
+[ext_resource path="res://asserts/img/Screenshot%202023-05-23%20094925.png" type="Texture" id=16]
+[ext_resource path="res://asserts/img/Screenshot%202023-05-23%20094750.png" type="Texture" id=17]
+[ext_resource path="res://asserts/img/Screenshot%202023-05-23%20094935.png" type="Texture" id=18]
+[ext_resource path="res://asserts/img/Screenshot%202023-05-23%20094907.png" type="Texture" id=19]
+[ext_resource path="res://asserts/img/Screenshot%202023-05-23%20094916.png" type="Texture" id=20]
+[ext_resource path="res://asserts/characters/Kid_Character_NOBG.png" type="Texture" id=21]
+[ext_resource path="res://asserts/characters/Mama_Character_NOBG.png" type="Texture" id=22]
 
 [sub_resource type="Theme" id=8]
 
 [sub_resource type="Gradient" id=5]
-offsets = PoolRealArray( 0.324022, 0.994413, 1 )
-colors = PoolColorArray( 0.0820312, 0.0820312, 0.0820312, 1, 0.587417, 0.586076, 0.586076, 1, 1, 1, 1, 1 )
+interpolation_mode = 1
+offsets = PoolRealArray( 0.324022, 0.988827, 0.994413, 0.994413, 1 )
+colors = PoolColorArray( 0.09375, 0.09375, 0.09375, 1, 0.0273438, 0.0269165, 0.0269165, 1, 0.587417, 0.586076, 0.586076, 1, 0.334724, 0.334054, 0.334054, 1, 1, 1, 1, 1 )
 
 [sub_resource type="GradientTexture" id=2]
 gradient = SubResource( 5 )
@@ -51,33 +65,73 @@ texture = SubResource( 2 )
 expand = true
 flip_v = true
 
-[node name="title" type="Label" parent="."]
+[node name="title" type="Control" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -403.0
-margin_top = -387.0
-margin_right = 385.0
-margin_bottom = -255.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme = ExtResource( 2 )
-text = "NAME OF QUIZ"
-align = 1
-valign = 1
-autowrap = true
-uppercase = true
+margin_left = -485.0
+margin_top = -446.0
+margin_right = 492.0
+margin_bottom = -247.0
+
+[node name="Screenshot202023-05-2320094737" type="Sprite" parent="title"]
+position = Vector2( 83, 110 )
+texture = ExtResource( 14 )
+
+[node name="Screenshot202023-05-2320094750" type="Sprite" parent="title"]
+position = Vector2( 165, 107 )
+texture = ExtResource( 17 )
+
+[node name="Screenshot202023-05-2320094802" type="Sprite" parent="title"]
+position = Vector2( 241, 104 )
+texture = ExtResource( 10 )
+
+[node name="Screenshot202023-05-2320094813" type="Sprite" parent="title"]
+position = Vector2( 344, 106 )
+texture = ExtResource( 3 )
+
+[node name="Screenshot202023-05-2320094821" type="Sprite" parent="title"]
+position = Vector2( 400, 103 )
+texture = ExtResource( 15 )
+
+[node name="Screenshot202023-05-2320094838" type="Sprite" parent="title"]
+position = Vector2( 459, 107 )
+texture = ExtResource( 13 )
+
+[node name="Screenshot202023-05-2320094847" type="Sprite" parent="title"]
+position = Vector2( 520, 108 )
+texture = ExtResource( 12 )
+
+[node name="Screenshot202023-05-2320094858" type="Sprite" parent="title"]
+position = Vector2( 578, 103 )
+texture = ExtResource( 11 )
+
+[node name="Screenshot202023-05-2320094907" type="Sprite" parent="title"]
+position = Vector2( 636, 101 )
+texture = ExtResource( 19 )
+
+[node name="Screenshot202023-05-2320094916" type="Sprite" parent="title"]
+position = Vector2( 745, 100 )
+texture = ExtResource( 20 )
+
+[node name="Screenshot202023-05-2320094925" type="Sprite" parent="title"]
+position = Vector2( 812, 106 )
+texture = ExtResource( 16 )
+
+[node name="Screenshot202023-05-2320094935" type="Sprite" parent="title"]
+position = Vector2( 876, 107 )
+texture = ExtResource( 18 )
 
 [node name="description" type="Label" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -356.0
-margin_top = -297.0
-margin_right = 320.0
-margin_bottom = -248.0
+margin_left = -360.0
+margin_top = -261.0
+margin_right = 316.0
+margin_bottom = -212.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 1 )
@@ -91,27 +145,27 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 121.0
-margin_top = -280.0
-margin_right = 203.0
-margin_bottom = -194.0
+margin_left = 312.0
+margin_top = -292.0
+margin_right = 413.0
+margin_bottom = -188.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 expand = true
 
-[node name="introImage" type="TextureRect" parent="."]
+[node name="logoIcon2" type="TextureRect" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -172.0
-margin_top = -141.0
-margin_right = 161.0
-margin_bottom = 23.0
+margin_left = 312.0
+margin_top = -292.0
+margin_right = 413.0
+margin_bottom = -188.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource( 4 )
+texture = ExtResource( 2 )
 expand = true
 
 [node name="Panel" type="Panel" parent="."]
@@ -119,10 +173,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -333.0
-margin_top = 251.0
-margin_right = 361.0
-margin_bottom = 397.0
+margin_left = -336.0
+margin_top = 312.0
+margin_right = 358.0
+margin_bottom = 458.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/panel = SubResource( 6 )
@@ -168,14 +222,39 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -170.0
-margin_top = 110.0
-margin_right = 146.0
-margin_bottom = 228.0
+margin_left = -499.0
+margin_top = -497.0
+margin_right = -281.0
+margin_bottom = -417.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 7 )
 custom_styles/normal = ExtResource( 6 )
 text = "Play"
+
+[node name="characters" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -398.0
+margin_top = -213.0
+margin_right = 352.0
+margin_bottom = 308.0
+
+[node name="DadNobg" type="Sprite" parent="characters"]
+position = Vector2( 231, 279 )
+scale = Vector2( 0.310185, 0.260417 )
+texture = ExtResource( 4 )
+
+[node name="KidCharacterNobg" type="Sprite" parent="characters/DadNobg"]
+position = Vector2( 618.985, 226.56 )
+scale = Vector2( 0.91194, 0.854 )
+texture = ExtResource( 21 )
+
+[node name="MamaCharacterNobg" type="Sprite" parent="characters/DadNobg"]
+position = Vector2( 1208.96, 49.92 )
+scale = Vector2( 1.06119, 1.05 )
+texture = ExtResource( 22 )
 
 [connection signal="pressed" from="playBtn" to="." method="_on_playBtn_pressed"]
