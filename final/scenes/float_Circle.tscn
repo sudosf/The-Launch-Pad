@@ -100,9 +100,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -304.0
-margin_top = -123.0
-margin_right = 484.0
+margin_left = -491.0
+margin_top = -124.0
+margin_right = 491.0
 margin_bottom = -27.0
 custom_styles/panel = SubResource( 6 )
 
@@ -216,6 +216,7 @@ margin_right = 250.0
 margin_bottom = 298.0
 
 [node name="answer" type="Label" parent="."]
+visible = false
 margin_right = 40.0
 margin_bottom = 14.0
 

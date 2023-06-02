@@ -2,7 +2,7 @@
 
 [ext_resource path="res://final/scripts/end.gd" type="Script" id=1]
 [ext_resource path="res://asserts/themes/title_label.tres" type="Theme" id=2]
-[ext_resource path="res://asserts/img/red-blood-drop-guttae-blood-dab970d241ab2886feb2860dc6bfbaf9.png" type="Texture" id=3]
+[ext_resource path="res://asserts/img/Screenshot%202023-05-23%20165435.png" type="Texture" id=3]
 [ext_resource path="res://asserts/characters/Mom_Umbrella_NOBG.png" type="Texture" id=4]
 [ext_resource path="res://final/components/curve_btn.tscn" type="PackedScene" id=5]
 [ext_resource path="res://asserts/themes/button/btn_normal_red.tres" type="StyleBox" id=6]
@@ -20,7 +20,7 @@ corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 
 [sub_resource type="StyleBoxFlat" id=6]
-bg_color = Color( 0, 0, 0, 0.270588 )
+bg_color = Color( 0, 0, 0, 0.592157 )
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
@@ -71,20 +71,20 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -431.0
-margin_top = -415.0
-margin_right = 255.0
-margin_bottom = -284.0
+margin_left = -451.0
+margin_top = -388.0
+margin_right = 235.0
+margin_bottom = -257.0
 
 [node name="TextureRect" parent="TextBubble" index="0"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -355.0
-margin_top = -84.5
-margin_right = 363.0
-margin_bottom = 98.5
+margin_left = -348.0
+margin_top = -75.5
+margin_right = 352.0
+margin_bottom = 77.5
 
 [node name="bg" parent="TextBubble" index="1"]
 margin_left = 2.0
@@ -114,10 +114,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -376.0
-margin_top = 224.0
-margin_right = 318.0
-margin_bottom = 370.0
+margin_left = -486.0
+margin_top = 219.0
+margin_right = 482.0
+margin_bottom = 402.0
 custom_styles/panel = SubResource( 6 )
 
 [node name="playBtn" parent="Panel" instance=ExtResource( 5 )]
@@ -138,19 +138,19 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 164.0
-margin_top = -355.0
-margin_right = 656.0
-margin_bottom = 238.0
+margin_left = 169.0
+margin_top = -314.0
+margin_right = 472.0
+margin_bottom = 279.0
 texture = ExtResource( 4 )
 expand = true
 stretch_mode = 5
 
 [node name="PanelScore" parent="." instance=ExtResource( 9 )]
-margin_left = -387.0
-margin_top = -195.0
-margin_right = 254.0
-margin_bottom = 184.0
+margin_left = -481.0
+margin_top = -207.0
+margin_right = 160.0
+margin_bottom = 172.0
 custom_styles/panel = SubResource( 8 )
 
 [node name="title" type="Label" parent="PanelScore"]
@@ -214,10 +214,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -508.0
-margin_top = -91.0
-margin_right = -318.0
-margin_bottom = 104.0
+margin_left = -429.0
+margin_top = -2.0
+margin_right = -308.0
+margin_bottom = 120.0
 texture = ExtResource( 3 )
 expand = true
 

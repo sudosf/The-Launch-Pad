@@ -116,9 +116,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -439.0
+margin_left = -500.0
 margin_top = 301.0
-margin_right = 427.0
+margin_right = 502.0
 margin_bottom = 405.0
 
 [node name="description" type="Label" parent="Control"]

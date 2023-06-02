@@ -98,9 +98,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -396.0
-margin_top = -163.0
-margin_right = 392.0
+margin_left = -488.0
+margin_top = -165.0
+margin_right = 463.0
 margin_bottom = -67.0
 custom_styles/panel = SubResource( 6 )
 
