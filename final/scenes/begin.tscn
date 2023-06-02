@@ -1,13 +1,13 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=24 format=2]
 
-[ext_resource path="res://asserts/themes/main_theme.tres" type="Theme" id=1]
+[ext_resource path="res://asserts/img/Background.png" type="Texture" id=1]
 [ext_resource path="res://asserts/img/Screenshot%202023-05-23%20165435.png" type="Texture" id=2]
 [ext_resource path="res://asserts/img/Screenshot%202023-05-23%20094813.png" type="Texture" id=3]
 [ext_resource path="res://asserts/characters/Dad_NOBG.png" type="Texture" id=4]
 [ext_resource path="res://final/components/curve_btn.tscn" type="PackedScene" id=5]
 [ext_resource path="res://asserts/themes/button/btn_normal_red.tres" type="StyleBox" id=6]
-[ext_resource path="res://asserts/themes/button/btn_hover_red.tres" type="StyleBox" id=7]
 [ext_resource path="res://asserts/fonts/MochiyPopOne-Regular.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://final/scripts/begin.gd" type="Script" id=9]
 [ext_resource path="res://asserts/img/Screenshot%202023-05-23%20094802.png" type="Texture" id=10]
 [ext_resource path="res://asserts/img/Screenshot%202023-05-23%20094858.png" type="Texture" id=11]
 [ext_resource path="res://asserts/img/Screenshot%202023-05-23%20094847.png" type="Texture" id=12]
@@ -24,27 +24,11 @@
 
 [sub_resource type="Theme" id=8]
 
-[sub_resource type="Gradient" id=5]
-interpolation_mode = 1
-offsets = PoolRealArray( 0.324022, 0.988827, 0.994413, 0.994413, 1 )
-colors = PoolColorArray( 0.09375, 0.09375, 0.09375, 1, 0.0273438, 0.0269165, 0.0269165, 1, 0.587417, 0.586076, 0.586076, 1, 0.334724, 0.334054, 0.334054, 1, 1, 1, 1, 1 )
-
-[sub_resource type="GradientTexture" id=2]
-gradient = SubResource( 5 )
-
-[sub_resource type="DynamicFont" id=9]
-size = 26
+[sub_resource type="DynamicFont" id=7]
+size = 40
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 8 )
-
-[sub_resource type="StyleBoxFlat" id=6]
-bg_color = Color( 0.6, 0.6, 0.6, 0.0313726 )
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-shadow_color = Color( 0, 0, 0, 0.756863 )
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -52,14 +36,16 @@ anchor_bottom = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = SubResource( 8 )
+script = ExtResource( 9 )
 
 [node name="background" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 38.0
+margin_right = 2.0
+margin_bottom = -2.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = SubResource( 2 )
+texture = ExtResource( 1 )
 expand = true
 flip_v = true
 
@@ -69,9 +55,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -485.0
-margin_top = -460.0
+margin_top = -446.0
 margin_right = 492.0
-margin_bottom = -305.0
+margin_bottom = -247.0
 
 [node name="Screenshot202023-05-2320094737" type="Sprite" parent="title"]
 position = Vector2( 83, 110 )
@@ -121,98 +107,58 @@ texture = ExtResource( 16 )
 position = Vector2( 876, 107 )
 texture = ExtResource( 18 )
 
-[node name="description" type="Label" parent="."]
+[node name="logoIcon" type="TextureRect" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -375.0
-margin_top = -283.0
-margin_right = 301.0
-margin_bottom = -223.0
+margin_left = 312.0
+margin_top = -292.0
+margin_right = 413.0
+margin_bottom = -188.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 1 )
-custom_fonts/font = SubResource( 9 )
-text = "Description of quiz game"
-align = 1
-valign = 1
-autowrap = true
+texture = ExtResource( 2 )
+expand = true
 
 [node name="logoIcon2" type="TextureRect" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 305.0
-margin_top = -304.0
-margin_right = 406.0
-margin_bottom = -200.0
+margin_left = 312.0
+margin_top = -292.0
+margin_right = 413.0
+margin_bottom = -188.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 2 )
 expand = true
 
-[node name="Panel" type="Panel" parent="."]
+[node name="playBtn" parent="." instance=ExtResource( 5 )]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -368.0
-margin_top = 261.0
-margin_right = 326.0
-margin_bottom = 407.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_styles/panel = SubResource( 6 )
-
-[node name="apple" parent="Panel" instance=ExtResource( 5 )]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_left = -339.0
-margin_top = -58.0
-margin_right = -115.0
-margin_bottom = -10.0
+margin_top = 292.0
+margin_right = 282.0
+margin_bottom = 386.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-disabled = true
-text = "Apple ID"
-
-[node name="google" parent="Panel" instance=ExtResource( 5 )]
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_left = 109.0
-margin_top = -60.0
-margin_right = 313.0
-margin_bottom = -11.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-disabled = true
-text = "Google"
-
-[node name="email" parent="Panel" instance=ExtResource( 5 )]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -243.0
-margin_right = 232.0
-margin_bottom = 76.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_styles/hover = ExtResource( 7 )
+custom_fonts/font = SubResource( 7 )
 custom_styles/normal = ExtResource( 6 )
-text = "Sign in with Email"
+text = "BEGIN"
 
 [node name="characters" type="Control" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -452.0
-margin_top = -223.0
-margin_right = 327.0
-margin_bottom = 282.0
+margin_left = -417.0
+margin_top = -276.0
+margin_right = 333.0
+margin_bottom = 245.0
 
 [node name="DadNobg" type="Sprite" parent="characters"]
 position = Vector2( 231, 279 )
@@ -228,3 +174,5 @@ texture = ExtResource( 21 )
 position = Vector2( 1208.96, 49.92 )
 scale = Vector2( 1.06119, 1.05 )
 texture = ExtResource( 22 )
+
+[connection signal="pressed" from="playBtn" to="." method="_on_playBtn_pressed"]

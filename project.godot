@@ -21,7 +21,7 @@ Network="*res://final/scripts/Network.gd"
 
 [display]
 
-window/size/height=1000
+window/size/height=900
 window/dpi/allow_hidpi=true
 window/stretch/mode="2d"
 window/stretch/aspect="expand"

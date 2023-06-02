@@ -1,18 +1,25 @@
-[gd_resource type="Theme" load_steps=6 format=2]
+[gd_resource type="Theme" load_steps=7 format=2]
 
 [ext_resource path="res://asserts/fonts/MochiyPopOne-Regular.ttf" type="DynamicFontData" id=1]
 
 [sub_resource type="DynamicFont" id=2]
-size = 15
+size = 12
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 12
+outline_color = Color( 0, 0, 0, 1 )
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.270588, 0.270588, 0.270588, 1 )
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.133333, 0.133333, 0.133333, 1 )
@@ -31,6 +38,13 @@ corner_radius_bottom_left = 30
 [resource]
 default_font = SubResource( 3 )
 Label/fonts/font = SubResource( 2 )
+LineEdit/colors/cursor_color = Color( 1, 1, 1, 1 )
+LineEdit/colors/font_color = Color( 1, 1, 1, 1 )
+LineEdit/constants/minimum_spaces = 15
+LineEdit/fonts/font = SubResource( 3 )
+LineEdit/styles/focus = SubResource( 6 )
+LineEdit/styles/normal = SubResource( 6 )
+LineEdit/styles/read_only = SubResource( 6 )
 ProgressBar/fonts/font = SubResource( 3 )
 ProgressBar/styles/bg = SubResource( 4 )
 ProgressBar/styles/fg = SubResource( 5 )

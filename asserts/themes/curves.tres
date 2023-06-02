@@ -5,7 +5,7 @@
 [ext_resource path="res://asserts/themes/button/btn_normal_dark.tres" type="StyleBox" id=3]
 
 [sub_resource type="DynamicFont" id=1]
-size = 14
+size = 18
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 1 )
