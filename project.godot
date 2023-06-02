@@ -23,9 +23,7 @@ Network="*res://final/scripts/Network.gd"
 
 window/size/height=900
 window/dpi/allow_hidpi=true
-window/handheld/orientation="portrait"
 window/stretch/mode="viewport"
-window/stretch/aspect="expand"
 
 [gui]
 

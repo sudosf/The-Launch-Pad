@@ -10,3 +10,6 @@ func _on_signUpBtn_pressed():
 
 func _on_signInBtn_pressed():
 	Global.custom_change_scene("res://final/scenes/sign_in.tscn")
+
+func _on_backBtn_pressed():
+	Global.custom_change_scene("res://final/scenes/intro.tscn")

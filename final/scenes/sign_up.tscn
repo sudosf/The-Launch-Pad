@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://asserts/themes/main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://asserts/themes/title_label.tres" type="Theme" id=2]
 [ext_resource path="res://final/scripts/sign_up.gd" type="Script" id=3]
+[ext_resource path="res://final/components/back_btn.tscn" type="PackedScene" id=4]
 [ext_resource path="res://final/components/curve_btn.tscn" type="PackedScene" id=5]
 [ext_resource path="res://asserts/themes/button/btn_normal_red.tres" type="StyleBox" id=6]
 [ext_resource path="res://asserts/themes/button/btn_hover_red.tres" type="StyleBox" id=7]
@@ -34,6 +35,14 @@ margin_right = 38.0
 texture = SubResource( 2 )
 expand = true
 flip_v = true
+
+[node name="backBtn" parent="." instance=ExtResource( 4 )]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -377.0
+margin_top = 18.0
+margin_right = -261.0
+margin_bottom = 74.0
 
 [node name="title" type="Label" parent="."]
 anchor_left = 0.5
@@ -168,5 +177,6 @@ custom_styles/hover = ExtResource( 7 )
 custom_styles/normal = ExtResource( 6 )
 text = "Sign In"
 
+[connection signal="pressed" from="backBtn" to="." method="_on_backBtn_pressed"]
 [connection signal="pressed" from="Panel/signUpBtn" to="." method="_on_signUpBtn_pressed"]
 [connection signal="pressed" from="Control/signInBtn" to="." method="_on_signInBtn_pressed"]
